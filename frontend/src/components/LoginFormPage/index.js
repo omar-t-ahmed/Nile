@@ -8,6 +8,7 @@ import './LoginForm.css';
 function LoginFormPage() {
     const history = useHistory()
     const dispatch = useDispatch();
+
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
@@ -32,14 +33,14 @@ function LoginFormPage() {
     }
 
     return (
-        <>
+        <div className='form-container'>
         <img className='logo' src={logo} alt='nile logo'></img>
         <form onSubmit={handleSubmit}>
             <h1 className='sign-in'>Sign in</h1>
             {errors.length > 0 && (
                 <ul>
                     {errors.map((error, idx) => (
-                        <li key={idx}>{error.message}</li>
+                        <li key={idx}>{error}</li>
                     ))}
             </ul>
             )}
@@ -64,7 +65,7 @@ function LoginFormPage() {
             </div>
             <button className='submit-button' type="submit">Sign in</button>
         </form>
-        </>
+        </div>
     );
 }
 

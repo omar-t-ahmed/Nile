@@ -38,13 +38,26 @@ export const logout = (userId) => async dispatch => {
     }
 }
 
+export const signup = (user) => async dispatch => {
+    // const { name, email, password } = user;
+    const res = await csrfFetch(('/api/users'), {
+        method: 'POST',
+        body: JSON.stringify(user)
+    })
+    
+    if (res.ok) {
+        const user = await res.json()
+        sessionStorage.setItem('currentUser', JSON.stringify(user.user));
+        dispatch(receiveUser(user))
+    }
+}
+
 export const storeCSRFToken = response => {
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken)  {
         sessionStorage.setItem("X-CSRF-Token", csrfToken);
     }
 }
-
 
 export const restoreSession = () => async dispatch => {
     const response = await csrfFetch("/api/session");
@@ -61,7 +74,7 @@ const sessionReducer = (state = initialState, action) => {
     
     switch (action.type) {
         case RECEIVE_USER:
-            nextState[action.user.id] = action.user;
+            nextState.currentUser = action.user;
             return nextState;
         case REMOVE_USER:
             delete nextState[action.userId];

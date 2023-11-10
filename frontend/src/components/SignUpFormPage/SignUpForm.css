@@ -1,42 +1,31 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.form-container {
-    text-align: center;
-}
-
-form {
+.sign-up {
     font-family: 'AmazonEmberMedium';
     font-weight: bolder;
-    text-align: left;
     background-color: white;
     color: black;
-    margin-top: 15px;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #d1d1d1;
     width: 300px;
+    position: fixed;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -21%);
 }
 
 .logo {
-    margin-top: 10px;
     width: 55px;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 }
 
 li {
-    list-style: none;
-    color: red;
-    margin-bottom: 5px;
+list-style: none;
+color: red;
+margin-bottom: 5px;
 }
 
 .login-container {
@@ -81,6 +70,7 @@ button {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .input-group {
     display: flex;
     flex-direction: column;
@@ -96,3 +86,19 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.link-tag {
+    text-decoration: none;
+    color: #0066c0
+}
+
+.link-tag:visited {
+    color: #0066c0
+}
+
+p.redirect-user-accounts {
+    font-size: 14px;
+}
+
+
+
