@@ -1,0 +1,92 @@
+form {
+    font-family: 'AmazonEmberMedium';
+    font-weight: bolder;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    width: 300px;
+    position: fixed;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -16%);
+}
+
+.logo {
+    width: 55px;
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+}
+
+ul {
+margin: 0;
+padding: 0;
+}
+
+li {
+list-style: none;
+color: red;
+margin-bottom: 5px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sign-in {
+    margin-top: 0;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    font-size: x-large;
+}
+
+label {
+    display: flex;
+    font-size: small;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+input {
+    padding: 5px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ffd812;
+    color: black; 
+    border: none;
+    padding: 8px 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 260px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
