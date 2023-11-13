@@ -73,7 +73,7 @@ function SignUpFormPage() {
                             />
                             {errors.email && (
                                 <div className="error-message">
-                                    <FontAwesomeIcon icon={faExclamation} /> {errors.email}
+                                    {errors.email}
                                 </div>
                             )}
                         </label>
@@ -87,7 +87,7 @@ function SignUpFormPage() {
                             />
                             {errors.password && (
                                 <div className="error-message">
-                                    <FontAwesomeIcon icon={faExclamation} /> {errors.password}
+                                    {errors.password}
                                 </div>
                             )}
                         </label>
@@ -101,7 +101,7 @@ function SignUpFormPage() {
                             />
                             {errors.password && (
                                 <div className="error-message">
-                                    <FontAwesomeIcon icon={faExclamation} /> {errors.password}
+                                    {errors.password}
                                 </div>
                             )}
                         </label>

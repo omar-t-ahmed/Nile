@@ -1,11 +1,11 @@
 import Navigation from "../Navigation/Navigation"
-
+import ItemIndex from "../Items/ItemIndex"
 
 const HomePage = () => {
     return (
         <>
         <Navigation/>
-        <h1>Products</h1>
+        <ItemIndex/>
         </>
     )
 }
