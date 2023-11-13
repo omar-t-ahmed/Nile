@@ -1,31 +1,37 @@
-.sign-up {
+.form-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
     font-family: 'AmazonEmberMedium';
     font-weight: bolder;
+    text-align: left;
     background-color: white;
     color: black;
+    margin-top: 15px;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #d1d1d1;
     width: 300px;
-    position: fixed;
-    top: 21%;
-    left: 50%;
-    transform: translate(-50%, -21%);
 }
 
 .logo {
+    margin-top: 10px;
     width: 55px;
 }
 
 ul {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-list-style: none;
-color: red;
-margin-bottom: 5px;
+    list-style: none;
+    color: red;
+    margin-bottom: 5px;
 }
 
 .login-container {
@@ -59,7 +65,7 @@ input {
 
 button {
     background-color: #ffd812;
-    color: black; 
+    color: black;
     border: none;
     padding: 8px 20px;
     margin-top: 20px;
@@ -69,7 +75,6 @@ button {
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .input-group {
     display: flex;
@@ -99,6 +104,14 @@ input {
 p.redirect-user-accounts {
     font-size: 14px;
 }
+
+.error-message {
+    color: red;
+    margin-left: 1px;
+    margin-top: 2px;
+}
+
+
 
 
 

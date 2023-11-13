@@ -20,7 +20,7 @@ ApplicationRecord.transaction do
   User.create!(
     name: 'demo',
     email: 'demo@user.io', 
-    password: 'password'
+    password: 'demopassword'
   )
 
   # More users
