@@ -1,11 +1,13 @@
 .preview-box {
+    font-family: 'AmazonEmberMedium';
     width: 250px;
     padding: 10px;
-    border: 1px solid grey;
+    border: 1px solid #d1d1d1;
     margin: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
 .laptop {
@@ -14,9 +16,11 @@
 
 .item-name {
     color: black;
-    font-weight: bolder;
+    font-weight: bold;
+    padding: 1em;
 }
 
 .item-price {
     color: #b12704;
+    font-size: 14px;
 }

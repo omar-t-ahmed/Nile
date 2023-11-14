@@ -4,8 +4,9 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import logo from '../images/nile-logo-transparent.png';
 import './LoginForm.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import errorTriangle from '../images/error-triangle.webp'
 
 function LoginFormPage() {
     const history = useHistory();
@@ -52,10 +53,10 @@ function LoginFormPage() {
 
     return (
         <div className='form-container'>
-            <img className='logo' src={logo} alt='nile logo'></img>
+            <img onClick={() => {history.push('/')}} className='logo' src={logo} alt='nile logo'></img>
             {errors.length > 0 && (
                     <div className='error-box'>
-                        <FontAwesomeIcon className='error-triangle' icon={faTriangleExclamation} size='xl' />
+                        <img className='error-triangle' src={errorTriangle}></img>
                         {errors}
                     </div>
                 )}
