@@ -1,0 +1,22 @@
+.preview-box {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid grey;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.laptop {
+    width: 200px
+}
+
+.item-name {
+    color: black;
+    font-weight: bolder;
+}
+
+.item-price {
+    color: #b12704;
+}

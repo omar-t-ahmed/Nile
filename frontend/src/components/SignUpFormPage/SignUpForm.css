@@ -1,5 +1,4 @@
 .form-container {
-    font-family: 'AmazonEmberMedium';
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -7,6 +6,7 @@
 }
 
 form {
+    font-family: 'AmazonEmberMedium';
     font-weight: bolder;
     text-align: left;
     background-color: white;
@@ -38,7 +38,6 @@ li {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 50px;
 }
 
 .sign-in {
@@ -64,7 +63,7 @@ input {
     border-radius: 5px;
 }
 
-.submit-button {
+button {
     background-color: #ffd812;
     color: black;
     border: none;
@@ -93,76 +92,26 @@ input {
     border-radius: 5px;
 }
 
-.new-to-nile {
-    color: #767676;
-    margin-top: 20px; 
-    font-size: 13px;
+.link-tag {
+    text-decoration: none;
+    color: #0066c0
 }
 
-.redirect-to-signup {
-    font-weight: lighter;
-    text-align: center;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    border-radius: 8px;
-    border: 1px solid #d1d1d1;
-    width: 340px;
-    margin: auto;
+.link-tag:visited {
+    color: #0066c0
 }
 
-.error-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #c40001;
-    font-size: 15px;
-    box-shadow: inset 0 0 10px -5px rgb(255, 147, 147);
-    padding: 10px;
-    width: 320px;
-    height: 50px;
-    background-color: white;
-    color: #c40001;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    margin-top: 15px
+p.redirect-user-accounts {
+    font-size: 14px;
 }
 
-.error-triangle {
-    margin-right: 10px;
-    color: rgb(211, 10, 10);
+.error-message {
+    color: red;
+    margin-left: 1px;
+    margin-top: 2px;
 }
 
-.new-to-nile {
-    color: #767676;
-    margin-top: 20px;
-    font-size: 13px;
-    position: relative;
-}
 
-.new-to-nile::before,
-.new-to-nile::after {
-    content: '';
-    height: 1px;
-    width: 120px;
-    background-color: #d8d8d8;
-    display: inline-block;
-    margin: 0 10px;
-    margin-bottom: 5px;
-}
 
-.redirect-to-signup {
-    font-weight: lighter;
-    text-align: center;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    border-radius: 8px;
-    border: 1px solid #d1d1d1;
-    width: 340px;
-    margin: auto;
-}
 
-.demo-button {
-    background-color: orange;
-}
+

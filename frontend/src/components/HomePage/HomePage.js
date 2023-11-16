@@ -1,6 +1,12 @@
+import Navigation from "../Navigation/Navigation"
+import ItemIndex from "../Items/ItemIndex"
+
 const HomePage = () => {
     return (
-        <h1>Products</h1>
+        <>
+        <Navigation/>
+        <ItemIndex/>
+        </>
     )
 }
 
