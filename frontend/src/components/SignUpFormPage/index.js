@@ -5,8 +5,6 @@ import { useDispatch } from 'react-redux';
 import logo from '../images/nile-logo-transparent.png'
 import './SignUpForm.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 
 function SignUpFormPage() {
     const history = useHistory()
@@ -55,9 +53,10 @@ function SignUpFormPage() {
                     <div className='login-container'>
                         <label>
                             Your name
-                            <input
+                            <input className='amazon-font'
                                 type="text"
                                 value={name}
+                                placeholder="First and last name"
                                 onChange={(e) => setName(e.target.value)}
                                 required
                             />
@@ -65,7 +64,7 @@ function SignUpFormPage() {
 
                         <label>
                             Email{' '}
-                            <input
+                            <input className='amazon-font'
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -80,9 +79,10 @@ function SignUpFormPage() {
 
                         <label>
                             Password
-                            <input
+                            <input className='amazon-font'
                                 type="password"
                                 value={password}
+                                placeholder="At least 6 characters"
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             {errors.password && (
@@ -94,7 +94,7 @@ function SignUpFormPage() {
 
                         <label>
                             Re-enter Password
-                            <input
+                            <input className='amazon-font'
                                 type="password"
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}

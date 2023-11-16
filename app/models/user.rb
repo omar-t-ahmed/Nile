@@ -10,6 +10,16 @@ class User < ApplicationRecord
   
   before_validation :ensure_session_token
 
+  has_many :cart_items,
+    foreign_key: :user_id,
+    class_name: :CartItem,
+    dependent: :destroy
+
+  has_many :items_in_cart,
+    through: :cart_items,
+    source: :items
+
+  
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user&.authenticate(password)

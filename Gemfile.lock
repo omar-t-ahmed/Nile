@@ -93,7 +93,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    loofah (2.21.4)
+    loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -105,7 +105,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
-    net-imap (0.4.4)
+    net-imap (0.4.5)
       date
       net-protocol
     net-pop (0.1.2)
@@ -114,10 +114,8 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.6.0)
     nokogiri (1.15.4-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.4)
     pry (0.14.2)
@@ -174,7 +172,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   annotate

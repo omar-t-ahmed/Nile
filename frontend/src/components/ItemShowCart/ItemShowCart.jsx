@@ -5,13 +5,9 @@ function addDays(currDate, days) {
     return new Date(currDate.getTime() + days*24*60*60*1000);
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-const days = getRandomInt(5)
-
 const ItemShowCart = ({item}) => {
+
+    const days = (item?.id) % 2 === 0 ? 2 : 3
 
     const givenDate = addDays(new Date(), days)
 
