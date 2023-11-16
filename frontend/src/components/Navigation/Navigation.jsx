@@ -30,7 +30,7 @@ const Navigation = () => {
     return (
         <div className="nav-container">
             <nav className="nav">
-                <div className="nav-logo">
+                <div className="nav-logo" onClick={() => {history.push('/')}}>
                     <img src={white_logo} alt="nile-logo" />
                 </div>
                 <div className="search-bar">

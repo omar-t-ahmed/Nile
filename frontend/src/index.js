@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import * as sessionActions from './store/session';
+import { fetchItem, getItem } from './store/items';
 
 const store = configureStore();
 
@@ -14,6 +15,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
+  window.fetchItem = fetchItem
+  window.getItem = getItem
 }
 
 function Root() {

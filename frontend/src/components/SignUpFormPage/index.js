@@ -49,7 +49,7 @@ function SignUpFormPage() {
     return (
         <>
             <div className='form-container'>
-                <img className='logo' src={logo} alt='nile logo'></img>
+                <img onClick={() => {history.push('/')}} className='logo' src={logo} alt='nile logo'></img>
                 <form className='sign-up' onSubmit={handleSubmit}>
                     <h1 className='sign-in'>Create an account</h1>
                     <div className='login-container'>

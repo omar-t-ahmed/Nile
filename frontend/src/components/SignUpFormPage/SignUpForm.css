@@ -28,11 +28,6 @@ ul {
     padding: 0;
 }
 
-li {
-    list-style: none;
-    color: red;
-    margin-bottom: 5px;
-}
 
 .login-container {
     display: flex;
