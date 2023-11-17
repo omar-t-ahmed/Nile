@@ -8,6 +8,8 @@ import App from './App';
 import configureStore from './store';
 import * as sessionActions from './store/session';
 import { fetchItem, getItem } from './store/items';
+import { fetchCartItem } from './store/cart_items';
+import { createCartItem } from './store/cart_items';
 
 const store = configureStore();
 
@@ -17,6 +19,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.fetchItem = fetchItem
   window.getItem = getItem
+  window.fetchCartItem = fetchCartItem
+  window.createCartItem = createCartItem
 }
 
 function Root() {

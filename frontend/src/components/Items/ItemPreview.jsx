@@ -12,7 +12,7 @@ const ItemPreview = ({item}) => {
         <div onClick={() => redirectToItemPage(item.id)} className='preview-box'>
             <img className='laptop' src={laptop} alt='laptop'></img>
             <ul className='item-name'>{item.name}</ul>
-            <ul className='item-price'>$ {item.price}</ul>
+            <ul className='item-price'><sup className='dollar-sign'>$</sup> {item.price}</ul>
         </div>
     )
 }

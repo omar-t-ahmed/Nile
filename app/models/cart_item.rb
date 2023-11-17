@@ -5,5 +5,5 @@ class CartItem < ApplicationRecord
 
     belongs_to :item,
         foreign_key: :item_id,
-        class_name: :item
+        class_name: :Item
 end

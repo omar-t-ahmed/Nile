@@ -1,11 +1,17 @@
+import { useDispatch } from 'react-redux';
+import { createCartItem } from '../../store/cart_items';
 import './ItemShowCart.css'
 import { useState } from 'react';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+
 
 function addDays(currDate, days) {
     return new Date(currDate.getTime() + days*24*60*60*1000);
 }
 
 const ItemShowCart = ({item}) => {
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state.session.currentUser)
 
     const days = (item?.id) % 2 === 0 ? 2 : 3
 
@@ -21,17 +27,40 @@ const ItemShowCart = ({item}) => {
 
     const formattedDate = dateFormatter.format(givenDate);
 
+    
+    const closestDate = addDays(new Date(), 1)
+
+    const optionsShip = {
+        month: 'long',
+        day: 'numeric'
+    };
+
+    const dateFormatterShip = new Intl.DateTimeFormat('en-US', optionsShip);
+
+    const closestShipping = dateFormatterShip.format(closestDate);
+
     const [quantity, setQuantity] = useState(1);
 
     const handleChange = (e) => {
         setQuantity(e.target.value);
     };
 
+    const addCartItem = () => {
+        const cart_item = {
+            userId: user.id,
+            itemId: item.id,
+            quantity: quantity
+        }
+        
+
+        dispatch(createCartItem(cart_item))
+    }
+
     return (
         <div className='item-show-cart-container'>
             <h3>${item?.price}</h3>
                 <p>FREE delivery <span className='bold-text'>{formattedDate}</span> on orders shipped by Nile over $35.</p>
-                <p>Or fastest delivery <span className='bold-text'>Tomorrow, November 15.</span> Order within <span className='green-text'>5 hrs 16 mins</span></p>
+                <p>Or fastest delivery <span className='bold-text'>Tomorrow, {closestShipping}</span> Order within <span className='green-text'>6 hrs 16 mins</span></p>
                 <span className='in-stock'>In Stock</span>
 
                 <div className='quantity'>
@@ -45,7 +74,7 @@ const ItemShowCart = ({item}) => {
                 </div>
 
                 <div className='center-buttons'>
-                    <button className='add-to-cart'>Add to Cart</button>
+                    <button className='add-to-cart' onClick={addCartItem}>Add to Cart</button>
                     <button className='buy-now'>Buy Now</button>
                 </div>
         </div>

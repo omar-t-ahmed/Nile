@@ -15,9 +15,9 @@ const ItemIndex = () => {
     return (
         <>
             <div className='all-items'>
-            {items.map((item) => {
-                return <ItemPreview item={item} key={item.id}/>
-            })}
+                {items.map((item) => {
+                    return <ItemPreview item={item} key={item.id}/>
+                })}
             </div>
         </>
     )

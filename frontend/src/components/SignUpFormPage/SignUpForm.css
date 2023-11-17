@@ -89,11 +89,11 @@ input {
 
 .link-tag {
     text-decoration: none;
-    color: #0066c0
+    color: #0062b8
 }
 
 .link-tag:visited {
-    color: #0066c0
+    color: #0062b8
 }
 
 p.redirect-user-accounts {
@@ -101,7 +101,7 @@ p.redirect-user-accounts {
 }
 
 .error-message {
-    color: red;
+    color: #c40001;
     margin-left: 1px;
     margin-top: 2px;
 }

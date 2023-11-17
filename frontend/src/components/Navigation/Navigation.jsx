@@ -27,6 +27,14 @@ const Navigation = () => {
         history.push('/')
     }
 
+    const cartRedirect = () => {
+        if (loggedIn) {
+            history.push('/cart')
+        } else {
+            history.push('/login')
+        }
+    }
+
     return (
         <div className="nav-container">
             <nav className="nav">
@@ -34,9 +42,9 @@ const Navigation = () => {
                     <img src={white_logo} alt="nile-logo" />
                 </div>
                 <div className="search-bar">
-                <select className='select-category'>
-                        <option value="all">All Departments</option>
-                        <option value="department-1">Department 1</option>
+                    <select className='select-category'>
+                            <option value="all">All Departments</option>
+                            <option value="department-1">Department 1</option>
                     </select>
                     <input className='search-input' type="text" placeholder="Search Nile" />
                     <div className='magnifying-glass'>
@@ -64,7 +72,7 @@ const Navigation = () => {
                     )}
                 </div>
 
-                <div className="cart">
+                <div className="cart" onClick={cartRedirect}>
                     <p className='cart-count'>0</p>
                     <div className='cart-icon-container'>
                         <img src={cart} alt='cart-icon' />
