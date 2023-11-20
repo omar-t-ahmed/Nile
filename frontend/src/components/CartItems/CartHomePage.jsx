@@ -11,7 +11,6 @@ const CartHomePage = () => {
   const cart_items = useSelector((state) => state?.cart_items ? Object.values(state.cart_items) : []);
 
   useEffect(() => {
-    debugger
     dispatch(fetchCartItems());
   }, [dispatch]);
 

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     border-top: 1px solid grey;
-    width: 50vw;
+    width: 55vw;
     min-width: 42em;
     text-align: left;
     padding: 1em;
@@ -73,4 +73,20 @@
 
 .quantity-input {
     width: 3em;
+}
+
+.cart-item-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+    width: 13em;
+    height: 15em;
+    border: 1px solid grey;
+}
+
+.cart-item-image {
+    height: auto;
+    max-height: 90%;
+    max-width: 100%;
 }

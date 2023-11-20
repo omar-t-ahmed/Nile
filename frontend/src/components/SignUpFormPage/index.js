@@ -109,7 +109,7 @@ function SignUpFormPage() {
         
                     <button className='submit-button' type="submit">Sign up</button>
 
-                    <p className='redirect-user-accounts'>Already have an account? <Link to='/login' className='link-tag'>Sign in</Link></p>
+                    <p className='redirect-user-accounts'>Already have an account? <Link to={'/login'} className='link-tag'>Sign in</Link></p>
                 </form>
             </div>
         </>

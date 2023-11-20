@@ -10,8 +10,10 @@ const ItemPreview = ({item}) => {
 
     return (
         <div onClick={() => redirectToItemPage(item.id)} className='preview-box'>
-            {/* <img className='laptop' src={laptop} alt='laptop'></img> */}
-            <img className="laptop" src={`${item?.photoUrl}`} alt="laptop"></img>
+            <div className='item-preview-image'>
+                {/* <img className='laptop' src={laptop} alt='laptop'></img> */}
+                <img className="image-preview" src={`${item?.photoUrl}`} alt="laptop"></img>
+            </div>
             <ul className='item-name'>{item.name}</ul>
             <ul className='item-price'><sup className='dollar-sign'>$</sup> {item.price}</ul>
         </div>

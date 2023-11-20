@@ -48,7 +48,9 @@ const CartItemPreview = ({ cart_item }) => {
             onChange={handleCheckboxChange}
         />
         <div className="left-section">
-            <img className="laptop-image" src={`${item?.photoUrl}`} alt="laptop"></img>
+            <div className='cart-item-image-container'>
+                <img className="cart-item-image" src={`${item?.photoUrl}`} alt=""></img>
+            </div>
             {/* <img className="cart-image" src={laptop} alt="laptop" /> */}
         </div>
         <div className="center-section">

@@ -14,7 +14,7 @@ const Navigation = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [modalVisible, setModalVisible] = useState(false)
-    const [loggedIn, setLoggedIn] = useState(false)
+    // const [loggedIn, setLoggedIn] = useState(false)
     const user = useSelector((state) => state.session.currentUser)
     const cart_items = useSelector((state) => state?.cart_items ? Object.values(state.cart_items) : [])
 
@@ -25,19 +25,18 @@ const Navigation = () => {
         total_cart_items = '99+'
     }
 
-    useEffect(() => {
-        setLoggedIn(!!user);
-
-    }, [user])
+    // useEffect(() => {
+    //     setLoggedIn(!!user);
+    // }, [user])
 
     const handleLogout = async () => {
-        await dispatch(logout(user.id))
-        setLoggedIn(false)
-        history.push('/')
-    }
+        await dispatch(logout(user.id));
+        // setLoggedIn(false);
+        history.push('/');
+    };
 
     const cartRedirect = () => {
-        if (loggedIn) {
+        if (user) {
             history.push('/cart')
         } else {
             history.push('/login')
@@ -61,11 +60,11 @@ const Navigation = () => {
                     </div>
                 </div>
                 <div className='hello-message' onMouseEnter={() => setModalVisible(true)} onMouseLeave={() => setModalVisible(false)}>
-                    <p>Hello, {loggedIn ? user.name : 'sign in'}</p>
+                    <p>Hello, {user ? user.name : 'sign in'}</p>
                     <p className='account-lists'>Account & Lists</p>
 
                     {modalVisible && (
-                        !loggedIn ? (
+                        !user ? (
                             <div className="modal">
                                 <button className='sign-in-modal' onClick={() => { history.push('/login') }}>
                                     Sign in

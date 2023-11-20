@@ -10,8 +10,10 @@
     text-align: center;
 }
 
-.laptop {
-    width: 200px
+.image-preview {
+    height: auto;
+    max-height: 90%;
+    max-width: 100%;
 }
 
 .item-name {
@@ -23,4 +25,9 @@
 .item-price {
     color: #b12704;
     font-size: 14px;
+}
+
+.item-preview-image {
+    width: 13em;
+    height: 15em;
 }

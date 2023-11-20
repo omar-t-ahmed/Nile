@@ -48,6 +48,7 @@ const ItemShowCart = ({item}) => {
     };
 
     const addCartItem = () => {
+        if (user) {
         const cart_item = {
             userId: user.id,
             itemId: item.id,
@@ -55,17 +56,25 @@ const ItemShowCart = ({item}) => {
         }
         
         dispatch(createCartItem(cart_item))
+        } else {
+            history.push('/login')
+        }
+
     }
 
     const addCartItemRedirect = () => {
+        if (user) {
         const cart_item = {
             userId: user.id,
             itemId: item.id,
             quantity: quantity
         }
-        
+
         dispatch(createCartItem(cart_item))
         history.push('/cart')
+        } else {
+            history.push('/login')
+        }
     }
 
     return (
