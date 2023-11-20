@@ -1,0 +1,38 @@
+.shipping {
+    background-color: white;
+    border: 1px solid grey;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    min-width: 40em;
+    padding: 3em;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.estimated-delivery {
+    margin-top: 0;
+}
+
+.shipping-home-page {
+    background-color: #ebeded;;
+    height: 100vh;
+}
+
+.delivery-time {
+    border-top: 1px solid grey;
+    padding-top: 1em;
+    width: 30em;
+    text-align: center;
+    margin-bottom: 0.4em;
+}
+
+.green-check {
+    width: 1em;
+}
+
+.order-placed {
+    color: #339636;
+}

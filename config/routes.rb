@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   post 'api/test', to: 'application#test'
   
+  delete '/api/cart_items/delete-multiple', to: 'api/cart_items#delete_multiple'
+  
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
     resource :session, only: [:show, :create, :destroy]

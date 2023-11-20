@@ -28,20 +28,23 @@ class Api::CartItemsController < ApplicationController
     end
 
     def index
+        # debugger
         @cart_items = current_user.cart_items
-        
         render :index
     end
 
     def destroy
-        @cart_item = CartItem.find_by(user_id: params[:user_id], item_id: params[:item_id])
+        @cart_item = CartItem.find(params[:id])
 
-        if @cart_item
-            @cart_item.destroy
-            render json: { message: 'Removed item from cart' }, status: :ok
-        else
-            render json: { error: 'Cart item not found' }, status: :not_found
-        end
+        @cart_item.destroy
+    end
+
+    def delete_multiple
+        # @cart_items = CartItem.where(id: params[:cartItemIds])
+        # @cart_items.destroy_all
+
+        @cart_items = CartItem.where(id: params["_json"])
+        @cart_items.destroy_all
     end
 
     private

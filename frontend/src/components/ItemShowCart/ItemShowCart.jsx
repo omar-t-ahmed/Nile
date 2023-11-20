@@ -3,6 +3,7 @@ import { createCartItem } from '../../store/cart_items';
 import './ItemShowCart.css'
 import { useState } from 'react';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function addDays(currDate, days) {
@@ -10,6 +11,7 @@ function addDays(currDate, days) {
 }
 
 const ItemShowCart = ({item}) => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const user = useSelector((state) => state.session.currentUser)
 
@@ -52,8 +54,18 @@ const ItemShowCart = ({item}) => {
             quantity: quantity
         }
         
-
         dispatch(createCartItem(cart_item))
+    }
+
+    const addCartItemRedirect = () => {
+        const cart_item = {
+            userId: user.id,
+            itemId: item.id,
+            quantity: quantity
+        }
+        
+        dispatch(createCartItem(cart_item))
+        history.push('/cart')
     }
 
     return (
@@ -66,7 +78,7 @@ const ItemShowCart = ({item}) => {
                 <div className='quantity'>
                     <select id='quantity' val={quantity} onChange={handleChange}>
                         {[...Array(10).keys()].map((val) => (
-                        <option val={val + 1}>
+                        <option value={val + 1} key={val + 1}>
                                 Qty: {val + 1}
                             </option>
                         ))}
@@ -75,7 +87,7 @@ const ItemShowCart = ({item}) => {
 
                 <div className='center-buttons'>
                     <button className='add-to-cart' onClick={addCartItem}>Add to Cart</button>
-                    <button className='buy-now'>Buy Now</button>
+                    <button className='buy-now' onClick={addCartItemRedirect}>Buy Now</button>
                 </div>
         </div>
     )

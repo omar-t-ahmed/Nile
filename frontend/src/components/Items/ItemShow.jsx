@@ -22,7 +22,8 @@ const ItemShow = () => {
             <div className="item-container">
                 <div>
                     <div className="item-category-show">{item?.category}</div>
-                    <img className="laptop-image" src={laptop} alt="laptop" />
+                    {/* <img className="laptop-image" src={laptop} alt="laptop" /> */}
+                    <img className="laptop-image" src={`${item?.photoUrl}`} alt="laptop"></img>
                 </div>
                 <div className="item-details">
                     <div className="item-name-show">{item?.name}</div>

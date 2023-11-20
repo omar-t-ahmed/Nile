@@ -19,7 +19,7 @@ body {
     font-family: 'Amazon Ember', sans-serif;
 }
 
-.nav img {
+.white-logo  {
     max-height: 35px;
 }
 
@@ -138,12 +138,27 @@ select {
     color: #656665;
 }
 
-.cart-count {
+.nav-cart {
+    width: 3.5vw;
+    min-width: 3em
+}
+
+.cart-count-single-digit {
     position: absolute;
     margin: 0;
     top: 8px;
-    right: 61px;
+    right: 3.2em;
     color: orange; 
     border-radius: 50%;
     font-size: 20px;
+}
+
+.cart-count-double-digit {
+    position: absolute;
+    margin: 0;
+    top: 0.7em;
+    right: 4em;
+    color: orange; 
+    border-radius: 50%;
+    font-size: 15px;
 }

@@ -16,9 +16,18 @@ const Navigation = () => {
     const [modalVisible, setModalVisible] = useState(false)
     const [loggedIn, setLoggedIn] = useState(false)
     const user = useSelector((state) => state.session.currentUser)
+    const cart_items = useSelector((state) => state?.cart_items ? Object.values(state.cart_items) : [])
+
+    let total_cart_items = 0
+    cart_items.forEach((cart_item) => {total_cart_items += cart_item?.quantity})
+
+    if (total_cart_items > 99) {
+        total_cart_items = '99+'
+    }
 
     useEffect(() => {
         setLoggedIn(!!user);
+
     }, [user])
 
     const handleLogout = async () => {
@@ -39,7 +48,7 @@ const Navigation = () => {
         <div className="nav-container">
             <nav className="nav">
                 <div className="nav-logo" onClick={() => {history.push('/')}}>
-                    <img src={white_logo} alt="nile-logo" />
+                    <img className="white-logo" src={white_logo} alt="nile-logo" />
                 </div>
                 <div className="search-bar">
                     <select className='select-category'>
@@ -73,9 +82,12 @@ const Navigation = () => {
                 </div>
 
                 <div className="cart" onClick={cartRedirect}>
-                    <p className='cart-count'>0</p>
+                    {total_cart_items < 10 ?
+                        <p className='cart-count-single-digit'>{total_cart_items}</p> :
+                        <p className='cart-count-double-digit'>{total_cart_items}</p>}
+
                     <div className='cart-icon-container'>
-                        <img src={cart} alt='cart-icon' />
+                        <img className='nav-cart' src={cart} alt='cart-icon' />
                     </div>
                     <p>Cart</p>
                 </div>

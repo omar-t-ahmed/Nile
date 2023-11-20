@@ -1,0 +1,27 @@
+.cart-items-homepage {
+  background-color: #ebeded;
+  /* height: 100vh; */
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-cart-items {
+  background-color: white;
+  width: 60vw;
+  min-width: 45em;
+  margin: 1em;
+  padding: 1em;
+}
+
+.checkout-container {
+  background-color: white;
+  width: 30vw;
+  min-width: 25em;
+  height: 30vh;
+  min-height: 10em;
+  margin: 1em;
+
+}

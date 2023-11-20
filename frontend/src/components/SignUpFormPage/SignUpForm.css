@@ -58,7 +58,7 @@ input {
     border-radius: 5px;
 }
 
-button {
+.submit-button {
     background-color: #ffd812;
     color: black;
     border: none;

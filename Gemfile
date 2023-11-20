@@ -21,6 +21,7 @@ gem "rack-cors"
 gem "bcrypt"
 gem "jbuilder"
 gem "faker"
+gem "aws-sdk-s3"
 
 group :development, :test do
   gem "byebug", platforms: %i[ mri mingw x64_mingw ]
