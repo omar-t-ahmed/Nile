@@ -6,6 +6,7 @@ import { deleteAllCartItems } from '../../store/cart_items';
 import './Checkout.css'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
+
 const Checkout = () => {
     const history = useHistory()
     const dispatch = useDispatch()

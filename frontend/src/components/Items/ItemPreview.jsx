@@ -15,7 +15,7 @@ const ItemPreview = ({item}) => {
                 <img className="image-preview" src={`${item?.photoUrl}`} alt="laptop"></img>
             </div>
             <ul className='item-name'>{item.name}</ul>
-            <ul className='item-price'><sup className='dollar-sign'>$</sup> {item.price}</ul>
+            <ul className='item-price'><span className='dollar-sign'>$</span> {item.price}</ul>
         </div>
     )
 }

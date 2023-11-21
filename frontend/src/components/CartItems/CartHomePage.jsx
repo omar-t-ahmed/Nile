@@ -5,6 +5,7 @@ import Checkout from './Checkout';
 import CartItemPreview from './CartItemPreview';
 import Navigation from '../Navigation/Navigation';
 import './CartHomePage.css';
+import { selectAllCartItems } from "../../store/cart_items";
 
 const CartHomePage = () => {
   const dispatch = useDispatch();
@@ -14,12 +15,25 @@ const CartHomePage = () => {
     dispatch(fetchCartItems());
   }, [dispatch]);
 
+  const handleSelectAll = () => {
+    const cartItemIds = cart_items.map((item) => item.id);
+    dispatch(selectAllCartItems(cartItemIds));
+  }
+
+  const selectAllButtonText = cart_items.every((item) => item.isChecked) ? 'Deselect all items' : 'Select all items';
+
   return (
     <div className='cart-items-homepage'>
       <Navigation />
       <div className='cart-content'>
         <div className='all-cart-items'>
-          {cart_items?.length > 0 ? <h2>Shopping Cart</h2> : <h2>Your Nile Cart is empty.</h2>}
+          {cart_items?.length > 0 ? 
+          <div className='cart-header'>
+            <h2 className='shopping-cart-text'>Shopping Cart</h2>
+              <button className='select-all' onClick={handleSelectAll}>{selectAllButtonText}</button>
+          </div> : 
+          <h2>Your Nile Cart is empty.</h2>
+          }
           {cart_items?.map((cart_item) => {
             return <CartItemPreview cart_item={cart_item} key={cart_item.id} />;
           })}

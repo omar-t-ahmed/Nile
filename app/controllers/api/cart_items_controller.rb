@@ -17,6 +17,18 @@ class Api::CartItemsController < ApplicationController
         end
     end
 
+    def update 
+        @cart_item = CartItem.find_by(user_id: params[:user_id], item_id: params[:item_id])
+
+        # if @cart_item 
+        #     @cart_item.update(cart_params)
+        # end
+
+        if @cart_item.update(cart_params)
+            render :show
+        end
+    end
+
     def show
         @cart_item = CartItem.find_by(user_id: params[:user_id], item_id: params[:item_id])
 
@@ -50,7 +62,7 @@ class Api::CartItemsController < ApplicationController
     private
 
     def cart_params 
-        params.require(:cart_item).permit(:user_id, :item_id, :quantity)
+        params.require(:cart_item).permit(:id, :user_id, :item_id, :quantity)
     end
 end
 

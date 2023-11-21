@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-function addDays(currDate, days) {
+export const addDays = (currDate, days) => {
     return new Date(currDate.getTime() + days*24*60*60*1000);
 }
 

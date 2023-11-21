@@ -85,7 +85,7 @@ select {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
     margin-top: 5px;
-    height: 120px;
+    height: 5em;
     width: 200px;
     /* display: flex;
     flex-direction: column;
@@ -157,8 +157,18 @@ select {
     position: absolute;
     margin: 0;
     top: 0.7em;
-    right: 4em;
+    right: 4.1em;
     color: orange; 
     border-radius: 50%;
     font-size: 15px;
+}
+
+.cart-count-over-99 {
+    position: absolute;
+    margin: 0;
+    top: 1.3em;
+    right: 5.4em;
+    color: orange; 
+    border-radius: 50%;
+    font-size: 11px;
 }

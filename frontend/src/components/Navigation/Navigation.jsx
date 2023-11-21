@@ -43,6 +43,7 @@ const Navigation = () => {
         }
     }
 
+
     return (
         <div className="nav-container">
             <nav className="nav">
@@ -81,10 +82,16 @@ const Navigation = () => {
                 </div>
 
                 <div className="cart" onClick={cartRedirect}>
-                    {total_cart_items < 10 ?
+                    {/* {total_cart_items < 10 ?
                         <p className='cart-count-single-digit'>{total_cart_items}</p> :
-                        <p className='cart-count-double-digit'>{total_cart_items}</p>}
-
+                        <p className='cart-count-double-digit'>{total_cart_items}</p>} */}
+                        {total_cart_items < 10 ? (
+                            <p className='cart-count-single-digit'>{total_cart_items}</p>
+                        ) : total_cart_items < 100 ? (
+                            <p className='cart-count-double-digit'>{total_cart_items}</p>
+                        ) : (
+                            <p className='cart-count-over-99'>{total_cart_items}</p>
+                        )}
                     <div className='cart-icon-container'>
                         <img className='nav-cart' src={cart} alt='cart-icon' />
                     </div>

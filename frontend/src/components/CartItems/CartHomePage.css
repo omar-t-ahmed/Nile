@@ -23,5 +23,28 @@
   height: 30vh;
   min-height: 10em;
   margin: 1em;
+}
 
+.select-all {
+  margin-left: 0.7em;
+  background: none;
+  border: none;
+  color: #017185;
+  cursor: pointer;
+}
+
+.select-all:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shopping-cart-text {
+  margin-bottom: 0.2em;
+  margin-left: 0.6em;
 }

@@ -21,6 +21,11 @@
     cursor: pointer;
 }
 
+.delete-link:hover {
+    color: #c45500;
+    text-decoration: underline;
+}
+
 .cart-item-details {
     margin-bottom: 0.5em;
     display: flex;
@@ -50,7 +55,6 @@
 }
 
 .cart-item-checkbox {
-    margin-right: 1em;
     appearance: none;
     height: 1.5em;
     width: 1.5em;
@@ -73,6 +77,8 @@
 
 .quantity-input {
     width: 3em;
+    border: 1px solid #727575;
+    box-shadow: inset 0 0 0 1px rgb(225, 225, 225);
 }
 
 .cart-item-image-container {
@@ -82,11 +88,22 @@
     margin-right: 1em;
     width: 13em;
     height: 15em;
-    border: 1px solid grey;
 }
 
 .cart-item-image {
     height: auto;
     max-height: 90%;
     max-width: 100%;
+}
+
+.update-qty {
+    background-color: #ffd812;
+    color: black;
+    border: none;
+    padding: 5px;
+    width: 80px;
+    margin-left: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }

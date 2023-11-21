@@ -48,7 +48,11 @@ require "open-uri"
     name: "KitchenAid Professional Stand Mixer",
     price: 349.99,
     category: "Home and Kitchen",
-    body: "Enhance your culinary skills with the KitchenAid Professional Stand Mixer. This powerful and versatile stand mixer is designed to handle a variety of tasks in the kitchen. With a robust motor and various attachments, it makes baking and cooking a breeze.",
+    body: "Knead & shred at the next level with 2x the power in the bowl than Tilt-head stand mixer*; 3-point locking bowl for stability. *Compared to KSM150 when measuring peak HP in the bowl; above speed 2
+    11 distinct speeds for power and control - from our powerful speed 10 to our most delicate 1/2 speed, this mixer has power and control from high to low, and everything in between.
+    Designed for folding, 1/2 speed gently adds delicate ingredients, like blueberries and egg whites, into recipes without overbeating.
+    With 7 quart capacity, you can easily mix 13 dozen cookies per batch*, knead over 8.5 lbs of bread, or mash over 7.5 lbs of potatoes. *Using the flat beater; 28g dough each.
+    Double flex edge beater designed with a twist and two flexible edges to scrape the bowl, giving you thorough ingredient incorporation and better results.* *Compared to our flat beater",
     description: "The KitchenAid Professional Stand Mixer is a must-have for any home chef. Its durable construction and high-performance motor ensure reliable and efficient mixing. The mixer comes with a large capacity bowl, perfect for making multiple batches of your favorite recipes",
     item_specifications: "Product Dimensions: 17.3 x 13.3 x 19.3 inches, 26 Pounds;
                     Date First Available: July 1, 2022;
@@ -95,7 +99,7 @@ require "open-uri"
                         ISBN-13: 978-1-234567-89-0;
                         Publication Date: September 15, 2022"
   })
-
+  
   dune.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dune.jpg"), filename: "dune.png")
 
   puts "Done!"
