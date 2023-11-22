@@ -9,12 +9,14 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import cart from '../images/cartIcon.png'
+import { fetchSearchItems } from '../../store/items';
 
 const Navigation = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [modalVisible, setModalVisible] = useState(false)
     // const [loggedIn, setLoggedIn] = useState(false)
+    const [search, setSearch] = useState()
     const user = useSelector((state) => state.session.currentUser)
     const cart_items = useSelector((state) => state?.cart_items ? Object.values(state.cart_items) : [])
 
@@ -43,6 +45,14 @@ const Navigation = () => {
         }
     }
 
+    const handleSearch = (e) => {
+        setSearch(e.currentTarget.value)
+    }
+
+    const sendSearch = () => {
+        dispatch(fetchSearchItems(search))
+    }
+
 
     return (
         <div className="nav-container">
@@ -55,8 +65,9 @@ const Navigation = () => {
                             <option value="all">All Departments</option>
                             <option value="department-1">Department 1</option>
                     </select>
-                    <input className='search-input' type="text" placeholder="Search Nile" />
-                    <div className='magnifying-glass'>
+                    <input className='search-input' type="text" placeholder="Search Nile" onChange={handleSearch}/>
+
+                    <div className='magnifying-glass' onClick={sendSearch}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />
                     </div>
                 </div>
@@ -82,9 +93,6 @@ const Navigation = () => {
                 </div>
 
                 <div className="cart" onClick={cartRedirect}>
-                    {/* {total_cart_items < 10 ?
-                        <p className='cart-count-single-digit'>{total_cart_items}</p> :
-                        <p className='cart-count-double-digit'>{total_cart_items}</p>} */}
                         {total_cart_items < 10 ? (
                             <p className='cart-count-single-digit'>{total_cart_items}</p>
                         ) : total_cart_items < 100 ? (

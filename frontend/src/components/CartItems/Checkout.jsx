@@ -34,10 +34,15 @@ const Checkout = () => {
     }
 
     return (
-        <div className='checkout'>
+        checkedItems?.length >= 1 ?
+        (<div className='checkout'>
         <h2>Subtotal ({numItems} items): ${subtotal.toFixed(2)}</h2>
         <button className='submit-button' onClick={sendToShip}>Proceed to Checkout</button>
-        </div>
+        </div>) : (
+            (<div className='checkout'>
+            <h2>No Items Selected</h2>
+            </div>)
+        )
     );
 };
 

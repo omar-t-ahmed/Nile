@@ -1,4 +1,9 @@
-.cart-items-homepage {
+.cart-items-homepage-1 {
+  background-color: #ebeded;
+  height: 100vh;
+}
+
+.cart-items-homepage-2 {
   background-color: #ebeded;
   /* height: 100vh; */
 }
