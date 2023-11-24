@@ -45,9 +45,23 @@ const Navigation = () => {
         }
     }
 
-    const handleSearch = (e) => {
-        setSearch(e.currentTarget.value)
-    }
+
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = async (e) => {
+        const query = e.currentTarget.value;
+        setSearch(query);
+      
+        // Fetch search results and update the state
+        if (query.trim() !== '') {
+          const response = await dispatch(fetchSearchItems(query));
+          setSearchResults(response || []);
+        } else {
+          setSearchResults([]);
+        }
+        console.log(searchResults); // Add this line to log searchResults
+      };
+
 
     const sendSearch = () => {
         dispatch(fetchSearchItems(search))
@@ -65,7 +79,34 @@ const Navigation = () => {
                             <option value="all">All Departments</option>
                             <option value="department-1">Department 1</option>
                     </select>
-                    <input className='search-input' type="text" placeholder="Search Nile" onChange={handleSearch}/>
+                    <div className="autocomplete-container">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Search Nile"
+              value={search || ''}
+              onChange={handleSearch}
+            />
+            {/* Autocomplete dropdown */}
+            {searchResults.length > 0 && (
+              <div className="autocomplete-dropdown">
+                {searchResults.map((result) => (
+                  <div
+                    key={result.id}
+                    className="autocomplete-item"
+                    onClick={() => {
+                      setSearch(result.name);
+                      setSearchResults([]);
+                      // Redirect or perform any other action with the selected item
+                      history.push(`/item/${result.id}`);
+                    }}
+                  >
+                    {result.name}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
 
                     <div className='magnifying-glass' onClick={sendSearch}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />

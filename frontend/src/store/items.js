@@ -46,12 +46,9 @@ export const fetchItem = (itemId) => async dispatch => {
 
 export const fetchSearchItems = (searchQuery) => async (dispatch) => {
     const res = await fetch(`/api/items/search?search=${searchQuery}`);
-
     if (res.ok) {
         const items = await res.json();
         dispatch(searchItems(items));
-    } else {
-        console.error("Error fetching search results:")
     }
 };
 
