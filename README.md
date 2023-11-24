@@ -32,3 +32,8 @@ const numItems = checkedItems.reduce((acc, cart_item) => {
 }, 0) // items only added to numItems if checked
 ```
 
+## Future technologies
+
+* search
+* categories
+* saved lists
