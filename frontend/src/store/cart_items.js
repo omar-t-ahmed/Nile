@@ -41,13 +41,6 @@ export const removeCartItems = (cartItemIds) => ({
 });
 
 
-// export const getCartItems = (state) => {
-//     return state.currentUser? Object.values(currentUser.cartItems) : []
-// }
-
-// export const getCartItem = (itemId) => (state) => {
-//     return state.currentUser? currentUser.cartItems[itemId] : null
-// }
 
 export const fetchCartItems = () => async dispatch => {
     const res = await csrfFetch('/api/cart_items')

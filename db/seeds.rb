@@ -26,13 +26,142 @@ require "open-uri"
     password: 'demopassword'
   )
 
+  geforceRtx3060 = Item.create(
+    {
+      name: "NVIDIA GeForce RTX 3060",
+      price: 299.99,
+      category: "Electronics",
+      body: "The NVIDIA GeForce RTX 3060 is powered by Ampere—NVIDIA's 2nd gen RTX architecture. Built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and high-speed G6 memory, it gives you the power you need to rip through the most demanding games. VENTUS brings a performance-focused design that maintains the essentials to accomplish any task at hand. Rocking a trusted dual fan arrangement laid into a rigid industrial design lets this sharp looking graphics card fit into any build. TORX Fan 3: The award-winning MSI TORX Fan 3 design creates high static pressure and pushes the limits of thermal performance. Core Pipe: Precision-crafted heat pipes ensure max contact to the GPU and spread heat along the full length of the heatsink",
+      description: "Immerse yourself in the world of gaming with the NVIDIA GeForce RTX 3060. This high-performance graphics card is designed to take your gaming experience to the next level, delivering realistic visuals and unparalleled performance.",
+      item_specifications: "Graphics Memory Size: 12 GB GDDR6;
+                          Core Clock: 1320 MHz;
+                          CUDA Cores: 3584;
+                          Ray Tracing Cores: 28;
+                          Tensor Cores: 112;
+                          Memory Interface: 192-bit;
+                          Outputs: 1x HDMI, 3x DisplayPort;
+                          DirectX Support: 12.1;
+                          Ray Tracing: Yes;
+                          NVIDIA DLSS: Yes"
+    }
+  )
+
+  geforceRtx3060.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/geforce-rtx.jpg"), filename: "geforceRtx3060.png")
+
+  ryzen5700g = Item.create(
+  {
+    name: "AMD Ryzen 7 5700G 8-Core, 16-Thread",
+    price: 359.99,
+    category: "Electronics",
+    body: "POWERFUL PROCESSING: The AMD Ryzen 7 5700G processor combines 8 cores and 16 threads for exceptional multitasking and processing power. Play some of the most popular games at 1080p with the fastest processor graphics in the world, no graphics card required
+    8 Cores and 16 processing threads, bundled with the AMD Wraith Stealth cooler
+    4.6 GHz Max Boost, unlocked for overclocking, 20 MB cache, DDR4-3200 support
+    For the advanced Socket AM4 platform. Maximum Operating Temperature (Tjmax)-95°C. Unlock new possibilities for work and play",
+    description: "For gamers, creators, and all-around PC users who want enthusiast-class performance without the need for a discrete graphics card – look no further than Ryzen™ 5000 G-Series Desktop Processors – The Ultimate Desktop Processor with Graphics. This unlocked processor not only delivers high-speed processing but also comes equipped with Radeon graphics for smooth visuals in gaming and content creation.",
+    item_specifications: "Processor Cores: 8;
+                        Threads: 16;
+                        Base Clock: 3.8 GHz;
+                        Max Boost Clock: 4.6 GHz;
+                        Radeon Graphics: Yes;
+                        Graphics Cores: 8;
+                        Cache: 16MB L3 Cache;
+                        TDP: 65W;
+                        Socket: AM4;
+                        PCIe Version: PCIe 3.0;
+                        Integrated Graphics: AMD Radeon RX Vega Graphics"
+  }
+  )
+
+  ryzen5700g.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/ryzen-5700.jpg"), filename: "ryzen5700gp.png")
+
+  vengeanceRgbPro = Item.create(
+    {
+      name: "Corsair VENGEANCE RGB PRO DDR4 32GB",
+      price: 79.99,
+      category: "Electronics",
+      body: "High performance DDR4 memory illuminates your system with vivid, animated lighting from ten ultra-bright, individually addressable RGB LEDs per module.
+      Take control with CORSAIR iCUE software and synchronize lighting across all your CORSAIR iCUE compatible products, including memory, fans, coolers, keyboards and more.
+      Customize lighting profiles with millions of different patterns and colors, or create your own in CORSAIR iCUE software.
+      Compatible with Intel and AMD DDR4 motherboards.
+      Requires no extra wires or cables for a clean and seamless install.
+      Custom performance PCB for the highest signal quality and performance stability.
+      Carefully screened ICs for extended overclocking potential",
+      description: "Upgrade your system with Corsair VENGEANCE RGB PRO DDR4 memory. Featuring vibrant RGB lighting and high-speed performance, this 32GB kit is designed for enthusiasts who demand both style and substance in their gaming rig.",
+      item_specifications: "Capacity: 32GB (2 x 16GB);
+                          Type: DDR4;
+                          Speed: 3200MHz;
+                          CAS Latency: 16;
+                          Voltage: 1.35V;
+                          RGB Lighting: Yes (Customizable);
+                          Form Factor: DIMM 288-pin;
+                          Compatibility: Intel 100 Series, Intel 200 Series, Intel 300 Series, Intel X299, AMD 300 Series, AMD 400 Series, AMD X570;
+                          Heat Spreader: Anodized Aluminum"
+    }
+  )
+
+  vengeanceRgbPro.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/vengeance-pro.jpg"), filename: "vengeanceRgbPro.png")
+
+  asusROG = Item.create(
+  {
+    name: "ASUS ROG Strix B550-XE Gaming WiFi AMD AM4",
+    price: 229.99,
+    category: "Electronics",
+    body: "AMD AM4 Socket and PCIe 4. 0: The perfect pairing for Zen 3 Ryzen 5000 & 3rd Gen AMD Ryzen CPUs.Audio: Supports up to 32-Bit/192kHz playback
+    Robust Power Design: 12plus2 DrMOS power stages with high-quality alloy chokes and durable capacitors provide reliable power for the last AMD high-count-core CPUs
+    Optimized Thermal Solution: Fanless VRM and chipset heatsinks with ASUS Stack Cool 3plus design keep your system running reliably under heavy load by enhancing passive cooling capacity for critical onboard components.
+    High-performance Gaming Networking: 2. 5 Gb LAN with ASUS LANGuard
+    Best Gaming Connectivity: Supports HDMI 2. 1(4Kat60HZ) and DisplayPort 1. 2 output, featuring dual M. 2 slots (NVMe SSD)—one with PCIe 4. 0 x4 connectivity, USB 3. 2 Gen 2 Type-C port and Thunderbolt 3 header",
+    description: "Elevate your gaming rig with the ASUS ROG Strix B550-XE Gaming WiFi motherboard. Featuring a powerful AMD AM4 socket, robust power delivery, and advanced cooling solutions, this motherboard is ready to handle the demands of modern gaming and content creation.",
+    item_specifications: "Socket Type: AMD AM4;
+                        Chipset: AMD B550;
+                        Form Factor: ATX;
+                        Memory Support: Up to 128GB DDR4 (4 slots);
+                        PCIe Slots: 2 x PCIe 4.0 x16, 3 x PCIe 3.0 x1;
+                        SATA Ports: 6 x SATA 6Gb/s;
+                        M.2 Slots: 2 x M.2;
+                        USB Ports: 1 x USB 3.2 Gen 2 Type-C, 1 x USB 3.2 Gen 2 Type-A, 2 x USB 3.2 Gen 1, 4 x USB 2.0;
+                        Networking: WiFi 6 (802.11ax), 2.5Gb Ethernet;
+                        Audio: SupremeFX S1220A 7.1-Channel HD Audio;
+                        RGB Lighting: Yes (Aura Sync);
+                        BIOS: UEFI AMI BIOS"
+  }
+  )
+
+  asusROG.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/asus-rog.jpg"), filename: "asusROG.png")
+
+  g502Hero = Item.create(
+  {
+    name: "Logitech G502 HERO High Performance Gaming Mouse",
+    price: 79.99,
+    category: "Electronics",
+    body: "PRECISION GAMING MOUSE: The Logitech G502 HERO is designed for high-performance gaming, offering precise control, customizable features, and a comfortable design for extended gaming sessions.",
+    description: "Take your gaming to the next level with the Logitech G502 HERO gaming mouse. Featuring the HERO sensor for accurate tracking, customizable RGB lighting, and a tunable weight system, this mouse is a versatile choice for gamers seeking precision and comfort.",
+    item_specifications: "Sensor: HERO 25K Optical Sensor;
+                        DPI Range: 100 - 25,600 DPI;
+                        Programmable Buttons: 11;
+                        Adjustable Weight: Yes (5 x 3.6g weights included);
+                        Lighting: RGB, customizable with Logitech G HUB software;
+                        Onboard Memory: Yes;
+                        Durability: 50 million clicks;
+                        Compatibility: Windows 7 or later, macOS 10.11 or later, Chrome OS;
+                        Cable Length: 2.1m (6.9ft);
+                        Dimensions: 132 x 75 x 40 mm;
+                        Weight: 121g (mouse only)"
+  }
+  )
+
+  g502Hero.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/g502-hero.jpg"), filename: "g502Hero.png")
 
   dellInspiron = Item.create(
     {
       name: "Dell Inspiron 15 5000 Series Laptop",
-      price: 799.99,
+      price: 599.99,
       category: "Electronics",
-      body: "Experience powerful performance with the Dell Inspiron 15 5000 Series Laptop. Equipped with the latest Intel Core processor, this laptop delivers seamless multitasking and responsive computing. The sleek design and vibrant 15.6-inch display makes it perfect for work or entertainment on the go",
+      body: "[Screen] 15.6” Full HD (1920x1080), Anti-Glare, LED-Backlit, Narrow Border WVA Display. Provides immersive visual experience, superior image quality, razor-sharp resolution, and wide-viewing angle.
+      [Processor] 10th Generation Intel Core i7-1065G7 Processor (8 MB Cache, up to 3.9 GHz). Intel latest Generation Processor with 10 nm Technology. Enable faster and cooler operation when performing business and daily computer tasks: document creation, internet browsing, and watching videos.
+      [Memory and Hard Drive] 8GB 2666MHz DDR4 RAM for Multitasking. 512GB SSD with faster data reading/writing speed than HDD. Improves your experience with faster boot up, cooler operation and less drain on battery.
+      [Ports and Battery] 1x USB 2.0, 1x HDMI, 2x USB 3.1, 1x Headphone/Microphone Combo Jack, 1x RJ45 Port, 1x SD Card Reader, 1x Wedge Shaped Lock Slot. 3-Cell/42 Wh Li-ion Battery.
+      [Dimensions and Weight] 14.33 x 9.80 x0.78; Weight: 4.03 lbs. BesTry accessory bundle includes High Speed HDMI, USB Extension Cable, and Mouse Pad",
       description: "The Dell Inspiron 15 5000 Series Laptop is packed with features to enhance your computing experience. Enjoy stunning visuals and vibrant colors on the 15.6-inch Full HD display. The laptop also comes with a backlit keyboard for comfortable typing in any lighting conditions.",
       item_specifications: "Product Dimensions: 14.96 x 10.16 x 0.89 inches, 4.41 Pounds;
                       Date First Available: June 15, 2022;
@@ -41,18 +170,18 @@ require "open-uri"
                       Country of Origin: China"
     })
 
-    dellInspiron.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dell-laptop(1).webp"), filename: "dell-laptop.png")
+  dellInspiron.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dell-laptop(1).webp"), filename: "dell-laptop.png")
 
   standMixer = Item.create(
   {
     name: "KitchenAid Professional Stand Mixer",
-    price: 349.99,
+    price: 249.99,
     category: "Home and Kitchen",
     body: "Knead & shred at the next level with 2x the power in the bowl than Tilt-head stand mixer*; 3-point locking bowl for stability. *Compared to KSM150 when measuring peak HP in the bowl; above speed 2
     11 distinct speeds for power and control - from our powerful speed 10 to our most delicate 1/2 speed, this mixer has power and control from high to low, and everything in between.
     Designed for folding, 1/2 speed gently adds delicate ingredients, like blueberries and egg whites, into recipes without overbeating.
-    With 7 quart capacity, you can easily mix 13 dozen cookies per batch*, knead over 8.5 lbs of bread, or mash over 7.5 lbs of potatoes. *Using the flat beater; 28g dough each.
-    Double flex edge beater designed with a twist and two flexible edges to scrape the bowl, giving you thorough ingredient incorporation and better results.* *Compared to our flat beater",
+    With 7 quart capacity, you can easily mix 13 dozen cookies per batch*, knead over 8.5 lbs of bread, or mash over 7 lbs of potatoes. *Using the flat beater; 28g dough each.
+    Double flex edge beater designed with a twist and two flexible edges to scrape the bowl, giving you thorough ingredient incorporation and better results",
     description: "The KitchenAid Professional Stand Mixer is a must-have for any home chef. Its durable construction and high-performance motor ensure reliable and efficient mixing. The mixer comes with a large capacity bowl, perfect for making multiple batches of your favorite recipes",
     item_specifications: "Product Dimensions: 17.3 x 13.3 x 19.3 inches, 26 Pounds;
                     Date First Available: July 1, 2022;
@@ -65,7 +194,7 @@ require "open-uri"
 
   catan = Item.create(
   {
-    name: "Catan (Base Game) Adventure Board Game for Adults and Family | Ages 10+ | for 3 to 4 Players ",
+    name: "Catan (Base Game) Adventure Board Game for Adults and Family",
     price: 27.49,
     category: "Toys and Games",
     body: "TRADE, BUILD AND SETTLE: Embark on a quest to settle the isle of Catan! Guide your settlers to victory by clever trading and cunning development. But beware! Someone might cut off your road or buy a monopoly. And you never know when the wily robber might steal some of your precious games!

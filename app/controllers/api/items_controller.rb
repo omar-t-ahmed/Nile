@@ -10,4 +10,8 @@ class Api::ItemsController < ApplicationController
         render :show
     end
     
+    def search
+        @items = Item.where("name ILIKE ?", "%#{params[:search]}%")
+        render :index
+    end
 end

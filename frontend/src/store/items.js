@@ -1,5 +1,7 @@
 export const RECEIVE_ITEMS = 'items/RECEIVE_ITEMS'
 export const RECEIVE_ITEM = 'items/RECEIVE_ITEM'
+export const SEARCH_ITEMS = 'items/SEARCH_ITEMS';
+
 
 export const receiveItems = (items) => ({
     type: RECEIVE_ITEMS,
@@ -11,6 +13,10 @@ export const receiveItem = (item) => ({
     item
 })
 
+export const searchItems = (items) => ({
+    type: SEARCH_ITEMS,
+    items,
+});
 
 export const getItems = (state) => {
     return state?.items ? Object.values(state.items) : []
@@ -38,6 +44,15 @@ export const fetchItem = (itemId) => async dispatch => {
 }
 
 
+export const fetchSearchItems = (searchQuery) => async (dispatch) => {
+    const res = await fetch(`/api/items/search?search=${searchQuery}`);
+    if (res.ok) {
+        const items = await res.json();
+        dispatch(searchItems(items));
+    }
+};
+
+
 
 const itemsReducer = (state = {}, action) => {
     switch(action.type) {
@@ -45,6 +60,8 @@ const itemsReducer = (state = {}, action) => {
             return {...action.items}
         case RECEIVE_ITEM:
             return {...state, [action.item.id] : action.item}
+        case SEARCH_ITEMS:
+            return { ...action.items };
         default:
             return state
         }

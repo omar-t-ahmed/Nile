@@ -28,6 +28,10 @@
 }
 
 .item-preview-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 13em;
     height: 15em;
 }
