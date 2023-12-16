@@ -9,14 +9,13 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import cart from '../images/cartIcon.png'
-import { fetchSearchItems } from '../../store/items';
+import { fetchItem, fetchItems, fetchSearchItems, updateSearchItems } from '../../store/items';
 
 const Navigation = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [modalVisible, setModalVisible] = useState(false)
 
-    const [search, setSearch] = useState('')
     const user = useSelector((state) => state.session.currentUser)
     const cart_items = useSelector((state) => state?.cart_items ? Object.values(state.cart_items) : [])
 
@@ -26,10 +25,6 @@ const Navigation = () => {
     if (total_cart_items > 99) {
         total_cart_items = '99+'
     }
-
-    // useEffect(() => {
-    //     setLoggedIn(!!user);
-    // }, [user])
 
     const handleLogout = async () => {
         await dispatch(logout(user.id));
@@ -44,30 +39,45 @@ const Navigation = () => {
         }
     }
 
-
-    const [searchResults, setSearchResults] = useState([]);
-
-    const handleSearch = async (e) => {
-        const query = e.currentTarget.value
-        setSearch(query)
-        
-        if (query.trim() !== '') {
-            const response = await dispatch(fetchSearchItems(query))
-            setSearchResults(response || [])
-        } else {
-            setSearchResults([])
-        }
-        debugger
+    const sendSearch = () => {
+        dispatch(updateSearchItems(searchQuery));
+        setSearchResults([])
+        setSearchQuery('')
     }
 
-    const sendSearch = () => {
-        dispatch(fetchSearchItems(search))
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+        const search = async () => {
+        if (searchQuery) {
+            const res = await dispatch(fetchSearchItems(searchQuery));
+            const items = Object.values(res)
+            debugger
+            if (items) {
+            setSearchResults(items.slice(0, 5));
+            }
+        } else {
+            setSearchResults([]);
+        }
+        };
+    
+        search();
+    }, [dispatch, searchQuery]);
+    
+    const handleInputChange = async (e) => {
+        setSearchQuery(e.target.value);
+    };
+
+    const handleLogoClick = () => {
+        history.push('/')
+        dispatch(fetchItems())
     }
 
 return (
     <div className="nav-container">
         <nav className="nav">
-            <div className="nav-logo" onClick={() => {history.push('/')}}>
+            <div className="nav-logo" onClick={handleLogoClick}>
                 <img className="white-logo" src={white_logo} alt="nile-logo" />
             </div>
             <div className="search-bar">
@@ -75,32 +85,29 @@ return (
                         <option value="all">All Departments</option>
                         <option value="department-1">Department 1</option>
                 </select>
-                <div className="autocomplete-container">
-        <input
-            className="search-input"
-            type="text"
-            placeholder="Search Nile"
-            value={search || ''}
-            onChange={handleSearch}
-        />
+                <div className="search-bar">
+                <input
+                className="search-input"
+                type="text"
+                placeholder="Search Nile"
+                id="search-bar"
+                value={searchQuery}
+                onChange={handleInputChange}
+                />
 
         {searchResults.length > 0 && (
-            <div className="autocomplete-dropdown">
-            {searchResults.map((result) => (
-                <div
-                key={result.id}
-                className="autocomplete-item"
-                onClick={() => {
-                    setSearch(result.name)
-                    setSearchResults([])
-                    history.push(`/item/${result.id}`)
-                }}
-                >
-                {result.name}
+                <div className="search-results-dropdown">
+                {searchResults.map((result) => (
+                    <div key={result.id} className="search-result-item" onClick={() => { 
+                    history.push(`/items/${result.id}`) 
+                    setSearchQuery('');
+                    setSearchResults([]);
+                    }}>
+                    <span>{result.name}</span>
+                    </div>
+                ))}
                 </div>
-            ))}
-            </div>
-        )}
+            )}
         </div>
 
                 <div className='magnifying-glass' onClick={sendSearch}>

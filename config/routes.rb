@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
     
+    resources :reviews, only: [:create, :show, :update,  :index, :destroy]
     resources :cart_items, only: [:create, :show, :update, :index, :destroy]
   end
 

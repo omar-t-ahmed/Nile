@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items.js';
 import Navigation from '../Navigation/Navigation.jsx';
-import laptop from '../images/dell-laptop(1).webp';
+// import laptop from '../images/dell-laptop(1).webp';
 import './ItemShow.css';
 import ItemShowCart from '../ItemShowCart/ItemShowCart.jsx';
+import Reviews from '../Reviews/Reviews.jsx';
 
 const ItemShow = () => {
     const dispatch = useDispatch();
@@ -59,6 +60,7 @@ const ItemShow = () => {
                         </tbody>
                     </table>
                 </div>
+                <Reviews item={item}/>
         </>
     );
 };

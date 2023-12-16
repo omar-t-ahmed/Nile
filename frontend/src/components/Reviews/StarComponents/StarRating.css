@@ -1,0 +1,7 @@
+.star-rating {
+    display: inline-flex;
+}
+
+.star {
+    font-size: 20px;
+}

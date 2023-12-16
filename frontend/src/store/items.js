@@ -1,7 +1,6 @@
-export const RECEIVE_ITEMS = 'items/RECEIVE_ITEMS'
-export const RECEIVE_ITEM = 'items/RECEIVE_ITEM'
-export const SEARCH_ITEMS = 'items/SEARCH_ITEMS';
-
+const RECEIVE_ITEMS = 'items/RECEIVE_ITEMS'
+const RECEIVE_ITEM = 'items/RECEIVE_ITEM'
+const SEARCH_ITEMS = 'items/SEARCH_ITEMS';
 
 export const receiveItems = (items) => ({
     type: RECEIVE_ITEMS,
@@ -48,7 +47,15 @@ export const fetchSearchItems = (searchQuery) => async (dispatch) => {
     const res = await fetch(`/api/items/search?search=${searchQuery}`);
     if (res.ok) {
         const items = await res.json();
-        dispatch(searchItems(items));
+        return items
+    }
+};
+
+export const updateSearchItems = (searchQuery) => async (dispatch) => {
+    const res = await fetch(`/api/items/search?search=${searchQuery}`);
+    if (res.ok) {
+        const items = await res.json();
+        dispatch(receiveItems(items))
     }
 };
 

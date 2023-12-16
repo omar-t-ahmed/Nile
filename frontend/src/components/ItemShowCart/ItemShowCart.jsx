@@ -26,7 +26,6 @@ const ItemShowCart = ({item}) => {
     };
 
     const dateFormatter = new Intl.DateTimeFormat('en-US', options);
-
     const formattedDate = dateFormatter.format(givenDate);
 
     
@@ -59,7 +58,6 @@ const ItemShowCart = ({item}) => {
         } else {
             history.push('/login')
         }
-
     }
 
     const addCartItemRedirect = () => {

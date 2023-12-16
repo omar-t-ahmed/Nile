@@ -44,7 +44,6 @@ export const removeCartItems = (cartItemIds) => ({
 
 export const fetchCartItems = () => async dispatch => {
     const res = await csrfFetch('/api/cart_items')
-
     if (res.ok) {
         const cartItems = await res.json()
         dispatch(receiveCartItems(cartItems))

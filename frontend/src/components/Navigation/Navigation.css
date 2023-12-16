@@ -175,26 +175,28 @@ select {
 
 .autocomplete-container {
     position: relative;
-  }
-  
-  .autocomplete-dropdown {
+}
+
+.search-results-dropdown {
+    font-family: 'AmazonEmberMedium';
     position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
-    z-index: 1;
+    top: calc(85%);
+    left: 24.5%;
+    z-index: 10;
     background-color: white;
     border: 1px solid #ccc;
+    color: #131921;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 35.5%;
     max-height: 200px;
     overflow-y: auto;
-  }
-  
-  .autocomplete-item {
+}
+
+.search-result-item {
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .autocomplete-item:hover {
+}
+
+.search-result-item:hover {
     background-color: #f1f1f1;
-  }
+}

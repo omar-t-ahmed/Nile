@@ -10,6 +10,7 @@ import * as sessionActions from './store/session';
 import { fetchItem, getItem } from './store/items';
 import { fetchCartItem } from './store/cart_items';
 import { createCartItem } from './store/cart_items';
+import { addReview, fetchReview, fetchReviews } from './store/reviews';
 
 const store = configureStore();
 
@@ -21,6 +22,9 @@ if (process.env.NODE_ENV !== 'production') {
   window.getItem = getItem
   window.fetchCartItem = fetchCartItem
   window.createCartItem = createCartItem
+  window.fetchReviews = fetchReviews
+  window.fetchReview = fetchReview
+  window.addReview = addReview
 }
 
 function Root() {

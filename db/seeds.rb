@@ -20,7 +20,7 @@ require "open-uri"
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
-  User.create!(
+  demo_user = User.create!(
     name: 'demo',
     email: 'demo@user.io', 
     password: 'demopassword'
@@ -230,6 +230,8 @@ require "open-uri"
   })
   
   dune.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dune.jpg"), filename: "dune.png")
+
+  Review.create!(star_rating: 5, header: 'Excellent product', body: 'I love this item!', item: dellInspiron, user: demo_user)
 
   puts "Done!"
 # end

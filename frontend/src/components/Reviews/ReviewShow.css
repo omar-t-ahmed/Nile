@@ -1,0 +1,14 @@
+.review-container {
+    padding: 2em;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 2.5em;
+    padding-right: 1em;
+}
+
+.review-stars {
+    display: flex;
+    align-items: center;
+}
