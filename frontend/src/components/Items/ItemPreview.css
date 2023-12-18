@@ -2,12 +2,11 @@
     font-family: 'AmazonEmberMedium';
     width: 250px;
     padding: 10px;
-    border: 1px solid #d1d1d1;
-    margin: 20px;
+    border: 1px solid #e8e8e8;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
 }
 
 .image-preview {
@@ -19,12 +18,24 @@
 .item-name {
     color: black;
     font-weight: bold;
-    padding: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 .item-price {
-    color: #b12704;
-    font-size: 14px;
+    color: black;
+    font-size: 20px;
+    display: flex;
+}
+
+.decimal-price {
+    padding-top: 0.2em;
+    font-size: 13px;
+}
+
+.dollar-sign {
+    padding-top: 0.2em;
+    font-size: 12px;
 }
 
 .item-preview-image {
@@ -34,6 +45,7 @@
     justify-content: center;
     width: 13em;
     height: 15em;
+    padding-left: 1em;
 }
 
 /* .dollar-sign {

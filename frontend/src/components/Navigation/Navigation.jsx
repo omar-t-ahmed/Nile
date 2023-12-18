@@ -83,7 +83,6 @@ return (
             <div className="search-bar">
                 <select className='select-category'>
                         <option value="all">All Departments</option>
-                        <option value="department-1">Department 1</option>
                 </select>
                 <div className="search-bar">
                 <input

@@ -13,21 +13,18 @@ const ItemPreview = ({item}) => {
         history.push(`/items/${itemId}`);
     };
 
-    const dispatch = useDispatch();
-
-    const reviews = useSelector((state) => state?.reviews ? Object.values(state.reviews) : [])
-    const reviewCount = reviews.length
+    debugger
+    const reviews = item.reviews
+    const reviewCount = item.reviews.length
     let totalReviewScore = 0;
 
     reviews.map((review) => {
-        totalReviewScore += review.starRating;
+        totalReviewScore += review.star_rating;
     })
 
     const average = reviewCount > 0 ? (totalReviewScore / reviewCount).toFixed(1) : "0.0";
 
-    useEffect(() => {
-        dispatch(fetchReviews(item?.id))
-    },[dispatch, item])
+    const divPrice = item.price.toString().split('.')
 
 
     return (
@@ -40,7 +37,7 @@ const ItemPreview = ({item}) => {
             <div className='rating-amt-preview'>
                     {average} <StarRating rating={average}/>
             </div>
-            <ul className='item-price'><span className='dollar-sign'>$</span> {item.price}</ul>
+            <ul className='item-price'><span className='dollar-sign'>$</span> {divPrice[0]}<span className='decimal-price'>{divPrice[1]}</span></ul>
         </div>
     )
 }
