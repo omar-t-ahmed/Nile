@@ -42,7 +42,7 @@ export const fetchReview = (reviewId) => async dispatch => {
 }
 
 export const addReview = (review) => async dispatch => {
-    const res = await csrfFetch('/api/reviews/new', {
+    const res = await csrfFetch('/api/reviews', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -79,17 +79,6 @@ export const removeReview = (reviewId) => async dispatch => {
     if (res.ok) {
         dispatch(deleteReview(reviewId))
     }
-}
-
-export const getReviewsAverage = (itemId) => {
-    const reviews = fetchReviews(itemId)
-
-    let totalReviewScore = reviews.reduce((total, review) =>{
-        return total + review.star_rating
-    },0)
-
-    const reviewCount = reviews.length
-    return reviewCount > 0 ? [reviewCount, (totalReviewScore / reviewCount).toFixed(1)] : [0, "0.0"]
 }
 
 const reviewsReducer = (state = { }, action) => {

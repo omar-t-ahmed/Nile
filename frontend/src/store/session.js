@@ -51,6 +51,15 @@ export const signup = (user) => async dispatch => {
     }
 }
 
+export const findUser = async (userId) => {
+    const res = await csrfFetch(`/api/users/${userId}`);
+    if (res.ok) {
+        const user = await res.json();
+        return user;
+    }
+    return null;
+};
+
 export const storeCSRFToken = response => {
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken)  {

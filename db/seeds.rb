@@ -13,7 +13,7 @@ require "open-uri"
   # Unnecessary if using `rails db:seed:replant`
   Item.destroy_all
   User.destroy_all
-
+  
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -21,7 +21,7 @@ require "open-uri"
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
   demo_user = User.create!(
-    name: 'demo',
+    name: 'Demo User',
     email: 'demo@user.io', 
     password: 'demopassword'
   )
@@ -106,11 +106,11 @@ require "open-uri"
     name: "ASUS ROG Strix B550-XE Gaming WiFi AMD AM4",
     price: 229.99,
     category: "Electronics",
-    body: "AMD AM4 Socket and PCIe 4. 0: The perfect pairing for Zen 3 Ryzen 5000 & 3rd Gen AMD Ryzen CPUs.Audio: Supports up to 32-Bit/192kHz playback
+    body: "AMD AM4 Socket and PCIe 4: The perfect pairing for Zen 3 Ryzen 5000 & 3rd Gen AMD Ryzen CPUs. Audio: Supports up to 32-Bit/192kHz playback
     Robust Power Design: 12plus2 DrMOS power stages with high-quality alloy chokes and durable capacitors provide reliable power for the last AMD high-count-core CPUs
     Optimized Thermal Solution: Fanless VRM and chipset heatsinks with ASUS Stack Cool 3plus design keep your system running reliably under heavy load by enhancing passive cooling capacity for critical onboard components.
-    High-performance Gaming Networking: 2. 5 Gb LAN with ASUS LANGuard
-    Best Gaming Connectivity: Supports HDMI 2. 1(4Kat60HZ) and DisplayPort 1. 2 output, featuring dual M. 2 slots (NVMe SSD)—one with PCIe 4. 0 x4 connectivity, USB 3. 2 Gen 2 Type-C port and Thunderbolt 3 header",
+    High-performance Gaming Networking: 2. 5 Gb LAN with ASUS LANGuard.
+    Best Gaming Connectivity: Supports HDMI 2. 1(4Kat60HZ) and DisplayPort 1. 2 output, featuring dual M. 2 slots (NVMe SSD)—one with PCIe 4. 0 x4 connectivity, USB 3. Type-C port and Thunderbolt 3 header",
     description: "Elevate your gaming rig with the ASUS ROG Strix B550-XE Gaming WiFi motherboard. Featuring a powerful AMD AM4 socket, robust power delivery, and advanced cooling solutions, this motherboard is ready to handle the demands of modern gaming and content creation.",
     item_specifications: "Socket Type: AMD AM4;
                         Chipset: AMD B550;

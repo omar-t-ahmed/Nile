@@ -31,6 +31,8 @@
     font-size: 2em;
     padding-bottom: 1em;
     border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: column;
 }
 
 .item-price-show {
@@ -94,6 +96,6 @@
     max-width: 100%;
 }
 
-
-
-
+.rating-amt {
+    font-size: 20px;
+}

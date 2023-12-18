@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/api/cart_items/delete-multiple', to: 'api/cart_items#delete_multiple'
   
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show]
     resource :session, only: [:show, :create, :destroy]
     resources :items, only: [:show, :index] do
       collection do

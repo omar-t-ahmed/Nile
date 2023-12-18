@@ -7,15 +7,31 @@ import Navigation from '../Navigation/Navigation.jsx';
 import './ItemShow.css';
 import ItemShowCart from '../ItemShowCart/ItemShowCart.jsx';
 import Reviews from '../Reviews/Reviews.jsx';
+import StarRating from '../Reviews/StarComponents/StarRating.jsx';
+import { fetchReviews } from '../../store/reviews.js';
 
 const ItemShow = () => {
     const dispatch = useDispatch();
     const { itemId } = useParams();
     const item = useSelector(getItem(itemId));
 
+    const reviews = useSelector((state) => state?.reviews ? Object.values(state.reviews) : [])
+    const reviewCount = reviews.length
+    let totalReviewScore = 0;
+
+    reviews.map((review) => {
+        totalReviewScore += review.starRating;
+    })
+
+    const average = reviewCount > 0 ? (totalReviewScore / reviewCount).toFixed(1) : "0.0";
+
     useEffect(() => {
         dispatch(fetchItem(itemId));
     }, [dispatch, itemId]);
+
+    useEffect(() => {
+        dispatch(fetchReviews(item?.id))
+    },[dispatch, item])
 
     return (
         <>
@@ -24,11 +40,17 @@ const ItemShow = () => {
                 <div>
                     <div className="item-category-show">{item?.category}</div>
                     <div className='image-show-container'>
-                        <img className="image-show" src={`${item?.photoUrl}`} alt="laptop"></img>
+                        <img className="image-show" src={`${item?.photoUrl}`} alt="item-img"></img>
                     </div>
                 </div>
                 <div className="item-details">
-                    <div className="item-name-show">{item?.name}</div>
+                    <div className="item-name-show">
+                        {item?.name}
+                        <div className='rating-amt'>
+                            <StarRating rating={average}/>
+                        </div>
+                        
+                    </div>
                     <div className="item-price-show">${item?.price}</div>
 
                     <div className="item-body-show">

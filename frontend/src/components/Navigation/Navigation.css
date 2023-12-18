@@ -1,11 +1,11 @@
 body {
-    font-family: 'Amazon Ember', sans-serif;
+    font-family: 'AmazonEmberMedium';
     margin: 0;
     padding: 0;
 }
 
 .nav {
-    font-family: 'Amazon Ember', sans-serif;
+    font-family: 'AmazonEmberMedium';
     margin-top: 0;
     height: 40px;
     background-color: #131921;
@@ -16,7 +16,7 @@ body {
     align-items: center;
 }
 .nav-container {
-    font-family: 'Amazon Ember', sans-serif;
+    font-family: 'AmazonEmberMedium';
 }
 
 .white-logo  {

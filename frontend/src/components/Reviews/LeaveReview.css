@@ -1,0 +1,61 @@
+.review-item-img {
+    width: 5em;
+    margin-right: 1em;
+}
+
+.review-item-img-container {
+    display: flex;
+    align-items: center;
+    width: 30em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #bbbfbf;
+}
+
+.leave-review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 35em;
+    padding: 1em;
+}
+
+::placeholder {
+    padding: 3px;
+    font-family: 'AmazonEmberMedium';
+}
+
+.review-headline-input {
+    width: 35em;
+    border: 1px solid #888c8d;
+    border-radius: 5px;
+}
+
+.review-body-input {
+    max-width: 35.5em;
+    width: 35.5em;
+    border: 1px solid #888c8d;
+    border-radius: 5px;
+}
+
+.input-container {
+    border-bottom: 1px solid #bbbfbf;
+    padding-bottom: 1em;
+}
+
+.add-review-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1em;
+}
+
+.add-review-button {
+    background-color: #ffd812;
+    color: black;
+    border: none;
+    padding: 8px 20px;
+    width: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
