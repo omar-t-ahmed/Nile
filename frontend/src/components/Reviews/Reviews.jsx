@@ -84,7 +84,7 @@ const Reviews = ({item}) => {
                             <div className="leave-review-container">
                                 <h3>Review this product</h3>
                                 <p>Share your thoughts with other customers</p>
-                                <button onClick={handleNewReview}>Write a customer review</button>
+                                <button className='redirect-review-new' onClick={handleNewReview}>Write a customer review</button>
                             </div>
                 </div>
 

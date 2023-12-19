@@ -13,18 +13,17 @@ const ItemPreview = ({item}) => {
         history.push(`/items/${itemId}`);
     };
 
-    debugger
-    const reviews = item.reviews
-    const reviewCount = item.reviews.length
+    const reviews = item?.reviews
+    const reviewCount = item?.reviews?.length
     let totalReviewScore = 0;
 
-    reviews.map((review) => {
+    reviews?.map((review) => {
         totalReviewScore += review.star_rating;
     })
 
     const average = reviewCount > 0 ? (totalReviewScore / reviewCount).toFixed(1) : "0.0";
 
-    const divPrice = item.price.toString().split('.')
+    const divPrice = item?.price?.toString().split('.')
 
 
     return (
@@ -35,7 +34,7 @@ const ItemPreview = ({item}) => {
             </div>
             <ul className='item-name'>{item.name}</ul>
             <div className='rating-amt-preview'>
-                    {average} <StarRating rating={average}/>
+                    <StarRating rating={average}/> {reviewCount}
             </div>
             <ul className='item-price'><span className='dollar-sign'>$</span> {divPrice[0]}<span className='decimal-price'>{divPrice[1]}</span></ul>
         </div>

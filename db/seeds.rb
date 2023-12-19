@@ -26,9 +26,15 @@ require "open-uri"
     password: 'demopassword'
   )
 
+  user1 = User.create!(name: 'John Doe', email: 'user1@example.com', password: 'user1password')
+  user2 = User.create!(name: 'Anna Smith', email: 'user2@example.com', password: 'user2password')
+  user3 = User.create!(name: 'Ryan Commack', email: 'user3@example.com', password: 'user3password')
+  user4 = User.create!(name: 'Leslie Jones', email: 'user4@example.com', password: 'user4password')
+  user5 = User.create!(name: 'Chris Ramirez', email: 'user5@example.com', password: 'user5password')
+
   geforceRtx3060 = Item.create(
     {
-      name: "NVIDIA GeForce RTX 3060",
+      name: "NVIDIA GeForce RTX 3060 12GB Graphics Card",
       price: 299.99,
       category: "Electronics",
       body: "The NVIDIA GeForce RTX 3060 is powered by Ampere—NVIDIA's 2nd gen RTX architecture. Built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and high-speed G6 memory, it gives you the power you need to rip through the most demanding games. VENTUS brings a performance-focused design that maintains the essentials to accomplish any task at hand. Rocking a trusted dual fan arrangement laid into a rigid industrial design lets this sharp looking graphics card fit into any build. TORX Fan 3: The award-winning MSI TORX Fan 3 design creates high static pressure and pushes the limits of thermal performance. Core Pipe: Precision-crafted heat pipes ensure max contact to the GPU and spread heat along the full length of the heatsink",
@@ -158,10 +164,9 @@ require "open-uri"
       price: 599.99,
       category: "Electronics",
       body: "[Screen] 15.6” Full HD (1920x1080), Anti-Glare, LED-Backlit, Narrow Border WVA Display. Provides immersive visual experience, superior image quality, razor-sharp resolution, and wide-viewing angle.
-      [Processor] 10th Generation Intel Core i7-1065G7 Processor (8 MB Cache, up to 3.9 GHz). Intel latest Generation Processor with 10 nm Technology. Enable faster and cooler operation when performing business and daily computer tasks: document creation, internet browsing, and watching videos.
+      [Processor] 10th Generation Intel Core i7-1065G7 Processor (8 MB Cache, up to 4 GHz). Intel latest Generation Processor with 10 nm Technology. Enable faster and cooler operation when performing business and daily computer tasks: document creation, internet browsing, and watching videos.
       [Memory and Hard Drive] 8GB 2666MHz DDR4 RAM for Multitasking. 512GB SSD with faster data reading/writing speed than HDD. Improves your experience with faster boot up, cooler operation and less drain on battery.
-      [Ports and Battery] 1x USB 2.0, 1x HDMI, 2x USB 3.1, 1x Headphone/Microphone Combo Jack, 1x RJ45 Port, 1x SD Card Reader, 1x Wedge Shaped Lock Slot. 3-Cell/42 Wh Li-ion Battery.
-      [Dimensions and Weight] 14.33 x 9.80 x0.78; Weight: 4.03 lbs. BesTry accessory bundle includes High Speed HDMI, USB Extension Cable, and Mouse Pad",
+      [Ports and Battery] 1x USB 2, 1x HDMI, 2x USB 3, 1x Headphone/Microphone Combo Jack, 1x RJ45 Port, 1x SD Card Reader, 1x Wedge Shaped Lock Slot. 3-Cell/42 Wh Li-ion Battery",
       description: "The Dell Inspiron 15 5000 Series Laptop is packed with features to enhance your computing experience. Enjoy stunning visuals and vibrant colors on the 15.6-inch Full HD display. The laptop also comes with a backlit keyboard for comfortable typing in any lighting conditions.",
       item_specifications: "Product Dimensions: 14.96 x 10.16 x 0.89 inches, 4.41 Pounds;
                       Date First Available: June 15, 2022;
@@ -232,6 +237,17 @@ require "open-uri"
   dune.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dune.jpg"), filename: "dune.png")
 
   Review.create!(star_rating: 5, header: 'Excellent product', body: 'I love this item!', item: dellInspiron, user: demo_user)
+  Review.create!(star_rating: 4, header: 'Solid Performance', body: 'Great laptop for the price!', item: dellInspiron, user: user1)
+  Review.create!(star_rating: 3, header: 'Good but not great', body: 'The laptop is decent, but there are some minor issues.', item: dellInspiron, user: user2)
+  Review.create!(star_rating: 5, header: 'Impressive Graphics Card', body: 'The NVIDIA GeForce RTX 3060 exceeded my expectations. It delivers exceptional performance and handles graphics-intensive tasks effortlessly.', item: geforceRtx3060, user: demo_user)
+  Review.create!(star_rating: 4, header: 'Powerful Processor', body: 'The AMD Ryzen 7 5700G is a beast when it comes to processing power. Multitasking is a breeze, and it\'s a great choice for both gaming and content creation.', item: ryzen5700g, user: user1)
+  Review.create!(star_rating: 5, header: 'Stunning RGB Memory', body: 'The Corsair VENGEANCE RGB PRO not only provides high-speed performance but also adds a vibrant touch to my setup with its customizable RGB lighting. Love it!', item: vengeanceRgbPro, user: user2)
+  Review.create!(star_rating: 4, header: 'Solid Gaming Motherboard', body: 'The ASUS ROG Strix B550-XE Gaming WiFi offers a robust power design and advanced features. It\'s a reliable choice for gaming enthusiasts.', item: asusROG, user: user3)
+  Review.create!(star_rating: 5, header: 'Precision at its Best', body: 'The Logitech G502 HERO is a gaming mouse that truly lives up to its name. The precision, customizable features, and comfortable design make it a winner.', item: g502Hero, user: user4)
+  Review.create!(star_rating: 4, header: 'Great Value for Money', body: 'The Dell Inspiron 15 5000 offers a solid performance at an affordable price. The full HD display and backlit keyboard are notable features.', item: dellInspiron, user: user5)
+  Review.create!(star_rating: 5, header: 'Kitchen Essential', body: 'The KitchenAid Stand Mixer is a game-changer in the kitchen. It\'s powerful, versatile, and the double flex edge beater ensures thorough mixing.', item: standMixer, user: demo_user)
+  Review.create!(star_rating: 5, header: 'Classic Board Game Fun', body: 'Catan is a timeless classic. The strategy, resource management, and trading make every game a unique and enjoyable experience.', item: catan, user: user1)
+  Review.create!(star_rating: 4, header: 'Epic Sci-Fi Masterpiece', body: 'Dune is a masterclass in science fiction. The world-building, intricate plot, and compelling characters make it a must-read for any sci-fi fan.', item: dune, user: user2)
 
   puts "Done!"
 # end
