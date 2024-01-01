@@ -35,7 +35,8 @@ const ReviewShow = ({review}) => {
                 <StarRating rating={review?.starRating}/>
             <h3>{review?.header}</h3>
             <p>{review?.body}</p>
-            {/* <button onClick={() => dispatch(removeReview(review?.id))}>delete</button> */}
+            
+            <button onClick={() => dispatch(removeReview(review?.id))}>delete</button>
         </div>
     )
 }

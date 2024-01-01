@@ -53,11 +53,14 @@ const Navigation = () => {
         if (searchQuery) {
             const res = await dispatch(fetchSearchItems(searchQuery));
             const items = Object.values(res)
-            debugger
             if (items) {
-            setSearchResults(items.slice(0, 5));
+                setSearchResults(items.slice(0, 5));
+            }
+            else {
+                setSearchResults([{name: 'No Results Found'}]);
             }
         } else {
+            // setSearchResults([{name: 'No Results Found'}]);
             setSearchResults([]);
         }
         };
@@ -74,6 +77,7 @@ const Navigation = () => {
         dispatch(fetchItems())
     }
 
+    debugger
 return (
     <div className="nav-container">
         <nav className="nav">
