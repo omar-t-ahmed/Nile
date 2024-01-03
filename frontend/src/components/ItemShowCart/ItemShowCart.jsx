@@ -27,7 +27,6 @@ const ItemShowCart = ({item}) => {
 
     const dateFormatter = new Intl.DateTimeFormat('en-US', options);
     const formattedDate = dateFormatter.format(givenDate);
-
     
     const closestDate = addDays(new Date(), 1)
 
@@ -55,6 +54,8 @@ const ItemShowCart = ({item}) => {
         }
         
         dispatch(createCartItem(cart_item))
+            .then(history.push(`/items/${item?.id}/addedtocart`))
+
         } else {
             history.push('/login')
         }
@@ -69,7 +70,8 @@ const ItemShowCart = ({item}) => {
         }
 
         dispatch(createCartItem(cart_item))
-        history.push('/cart')
+            .then(history.push('/cart'))
+            
         } else {
             history.push('/login')
         }

@@ -12,6 +12,8 @@ const ReviewShow = ({review}) => {
     const [user, setUser] = useState(null);
     const dispatch = useDispatch()
 
+    const currentUser = useSelector((state) => state.session.currentUser)
+
     useEffect(() => {
         const fetchUser = async () => {
         if (review?.userId) {
@@ -35,8 +37,13 @@ const ReviewShow = ({review}) => {
                 <StarRating rating={review?.starRating}/>
             <h3>{review?.header}</h3>
             <p>{review?.body}</p>
-            
-            <button onClick={() => dispatch(removeReview(review?.id))}>delete</button>
+            {review?.userId === currentUser?.id ?
+                <div className="delete-review-button-container">
+                    <button className='delete-review-button' onClick={() => dispatch(removeReview(review?.id))}>delete</button>
+                </div>
+                :
+                null
+            }
         </div>
     )
 }

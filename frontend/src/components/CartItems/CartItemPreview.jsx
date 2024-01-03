@@ -8,10 +8,12 @@ import './CartItemPreview.css';
 
 const CartItemPreview = ({ cart_item }) => {
     const dispatch = useDispatch();
-    const item = useSelector(getItem(cart_item.itemId));
+    const item = useSelector(getItem(cart_item?.itemId));
     const isChecked = useSelector((state) => state.cart_items[cart_item.id]?.isChecked);
-    const [quantity, setQuantity] = useState(cart_item.quantity);
+    const [quantity, setQuantity] = useState(cart_item?.quantity);
     const [isUpdateVisible, setUpdateVisible] = useState(false);
+
+    console.log(cart_item)
 
     useEffect(() => {
         dispatch(fetchItem(cart_item.itemId));
@@ -27,6 +29,12 @@ const CartItemPreview = ({ cart_item }) => {
 
     const handleChange = (e) => {
         setQuantity(e.target.value);
+        const newQuantity = parseInt(e.target.value, 10);
+        if (isNaN(newQuantity) || newQuantity < 1) {
+            setQuantity(1);
+        } else {
+            setQuantity(newQuantity);
+        }
         setUpdateVisible(true);
     };
 

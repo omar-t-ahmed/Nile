@@ -60,35 +60,37 @@ function LoginFormPage() {
                         {errors}
                     </div>
                 )}
-                
-            <form onSubmit={handleSubmit}>
-                <h1 className='sign-in'>Sign in</h1>
-                <div className='login-container'>
-                    <label>
-                        Email{' '}
-                        <input
-                            type='text'
-                            value={credential}
-                            onChange={(e) => setCredential(e.target.value)}
-                        />
-                    </label>
-                    <label>
-                        Password{' '}
-                        <input
-                            type='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </label>
-                </div>
-                <button className='submit-button' type='submit'>
-                    Sign in
-                </button>
-                <button className='demo-button' onClick={handleDemoLogin}>
-                Login as Demo User
-            </button>
-            </form>
+
+
+            <div className='form-container-border' >
+                <form onSubmit={handleSubmit}>
+                    <h1 className='sign-in'>Sign in</h1>
+                    <div className='login-container'>
+                        <label>
+                            Email{' '}
+                            <input
+                                type='text'
+                                value={credential}
+                                onChange={(e) => setCredential(e.target.value)}
+                            />
+                        </label>
+                        <label>
+                            Password{' '}
+                            <input
+                                type='password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <button className='submit-button' type='submit'>
+                        Sign in
+                    </button>
+                </form>
+                    <button className='demo-button' onClick={handleDemoLogin}>
+                    Login as Demo User
+                    </button>
+            </div>
 
             <p className='new-to-nile'>New to Nile?</p>
             <button

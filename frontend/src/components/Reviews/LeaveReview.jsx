@@ -22,6 +22,7 @@ const LeaveReview = () => {
         item_id: parseInt(itemId),
         user_id: user.id
     });
+    const [isEmpty, setIsEmpty] = useState(false)
 
     const handleReviewChange = (e) => {
         setReview({
@@ -34,6 +35,10 @@ const LeaveReview = () => {
     };
 
     const handleAddReview = async () => {
+        if (review.header === '' || review.body === '') {
+            setIsEmpty(true)
+            return
+        }
         try {
             await dispatch(addReview(review));
             history.push(`/items/${itemId}`);
@@ -85,6 +90,13 @@ const LeaveReview = () => {
                                 placeholder='What did you like or dislike? What did you use this product for?'
                                 name="body"
                             />
+                        </div>
+                        <div>
+                            {isEmpty ?
+                                <p>Please fill in headline and body</p>
+                                : 
+                                null
+                            }
                         </div>
                         <div className='add-review-button-container'>
                             <button className='add-review-button' onClick={handleAddReview}>Submit</button>

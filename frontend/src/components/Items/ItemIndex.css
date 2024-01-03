@@ -4,3 +4,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.empty-items-index {
+    margin-bottom: 74.5vh;
+    text-align: center;
+}

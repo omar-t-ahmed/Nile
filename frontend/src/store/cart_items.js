@@ -118,6 +118,7 @@ export const deleteAllCartItems = (checkedItems) => async (dispatch) => {
 
 const cartItemsReducer = (state = {}, action) => {
     let newState = {...state}
+    // console.log(action)
 
     switch(action.type) {
         case RECEIVE_CART_ITEMS:

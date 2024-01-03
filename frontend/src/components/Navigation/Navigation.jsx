@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import cart from '../images/cartIcon.png'
-import { fetchItem, fetchItems, fetchSearchItems, updateSearchItems } from '../../store/items';
+import { fetchItems, fetchSearchItems, updateSearchItems } from '../../store/items';
 
 const Navigation = () => {
     const dispatch = useDispatch()
@@ -51,16 +51,12 @@ const Navigation = () => {
     useEffect(() => {
         const search = async () => {
         if (searchQuery) {
-            const res = await dispatch(fetchSearchItems(searchQuery));
+            const res = await dispatch(fetchSearchItems(searchQuery))
             const items = Object.values(res)
             if (items) {
-                setSearchResults(items.slice(0, 5));
-            }
-            else {
-                setSearchResults([{name: 'No Results Found'}]);
+                setSearchResults(items.slice(0, 5))
             }
         } else {
-            // setSearchResults([{name: 'No Results Found'}]);
             setSearchResults([]);
         }
         };
@@ -76,8 +72,7 @@ const Navigation = () => {
         history.push('/')
         dispatch(fetchItems())
     }
-
-    debugger
+    
 return (
     <div className="nav-container">
         <nav className="nav">

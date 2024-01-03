@@ -14,11 +14,15 @@ const ItemIndex = () => {
     
     return (
         <>
-            <div className='all-items'>
-                {items.map((item) => {
-                    return <ItemPreview item={item} key={item.id}/>
-                })}
-            </div>
+        {items.length > 0 ? 
+        <div className='all-items'>
+        {items.map((item) => {
+            return <ItemPreview item={item} key={item.id}/>
+        })}
+    </div> : 
+    <div className='empty-items-index'>
+        <h1 className='no-products'>No items found matching your search</h1>
+    </div>}
         </>
     )
 }

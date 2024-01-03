@@ -5,7 +5,11 @@
     align-items: center;
 }
 
-form {
+.form-container p {
+    text-align: center;
+}
+
+.sign-up {
     font-family: 'AmazonEmberMedium';
     font-weight: bolder;
     text-align: left;

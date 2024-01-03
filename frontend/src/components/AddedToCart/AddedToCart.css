@@ -1,0 +1,51 @@
+.added-to-cart-background {
+    background-color: #ebeded;
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+}
+
+.added-to-cart-container {
+    background-color: white;
+    margin-top: 5vh;
+    border-radius: 2px;
+    width: 50vw;
+    min-width: 40em;
+    height: 20vh;
+    padding: 3em;
+}
+
+.green-check {
+    margin-right: 0.5em;
+}
+
+.added-to-cart-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5vw;
+}
+
+.image-show-added-to-cart {
+    height: 5em;
+    margin-right: 1em;
+}
+
+.go-to-cart-button-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 8vh;
+}
+
+.go-to-cart-button {
+    font-family: 'AmazonEmberMedium';
+    border: 1px solid #d5d9da;
+    border-radius: 9px;
+    font-size: 16px;
+    padding: 8px;
+    width: 10em;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 1px rgb(225, 225, 225);
+    color: #0f1111;
+}
