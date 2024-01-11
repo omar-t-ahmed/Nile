@@ -51,7 +51,6 @@ const LeaveReview = () => {
         dispatch(fetchItem(itemId));
     }, [dispatch, itemId]);
 
-    // debugger
 
     return (
         <>

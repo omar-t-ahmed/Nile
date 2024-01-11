@@ -13,8 +13,6 @@ const CartItemPreview = ({ cart_item }) => {
     const [quantity, setQuantity] = useState(cart_item?.quantity);
     const [isUpdateVisible, setUpdateVisible] = useState(false);
 
-    console.log(cart_item)
-
     useEffect(() => {
         dispatch(fetchItem(cart_item.itemId));
     }, [dispatch, cart_item.itemId]);

@@ -33,7 +33,6 @@ const Reviews = ({item}) => {
         dispatch(fetchReviews(item?.id))
     },[dispatch, item])
 
-    // debugger
 
     const handleNewReview = () => {
         history.push(`/items/${itemId}/review`)
