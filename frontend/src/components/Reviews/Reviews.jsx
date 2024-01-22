@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import ReviewShow from "./ReviewShow"
 import './Reviews.css'
 import StarRating from "./StarComponents/StarRating";
-import { useState } from "react";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 
