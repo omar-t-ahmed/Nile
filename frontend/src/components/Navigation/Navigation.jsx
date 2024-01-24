@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import cart from '../images/cartIcon.png'
 import { fetchItems, fetchSearchItems, updateSearchItems } from '../../store/items';
+import Categories from '../Categories/Categories';
 
 const Navigation = () => {
     const dispatch = useDispatch()
@@ -147,6 +148,7 @@ return (
                 <p>Cart</p>
             </div>
         </nav>
+        <Categories/>
     </div>
     )
 }
