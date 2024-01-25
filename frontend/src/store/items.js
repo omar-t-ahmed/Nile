@@ -59,6 +59,14 @@ export const updateSearchItems = (searchQuery) => async (dispatch) => {
     }
 };
 
+export const updateCategory = (category) => async (dispatch) => {
+    const res = await fetch(`/api/items/category?search=${category}`);
+    if (res.ok) {
+        const items = await res.json();
+        dispatch(receiveItems(items))
+    }
+};
+
 
 
 const itemsReducer = (state = {}, action) => {

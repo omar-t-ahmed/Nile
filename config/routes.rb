@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :items, only: [:show, :index] do
       collection do
         get 'search'
+        get 'category'
       end
     end
     

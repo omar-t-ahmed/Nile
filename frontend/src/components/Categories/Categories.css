@@ -6,12 +6,13 @@
 
 .category-clickable {
     color: white;
+    padding-left: 20px;
+    margin: 1px;
+    padding-right: 20px;
+    border: 1px solid #222f3e;
 }
 
-.category-name {
-    padding: 1em;
-}
-
-.category-name:hover {
+.category-clickable:hover {
     border: 1px solid white;
+
 }

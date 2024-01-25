@@ -14,4 +14,9 @@ class Api::ItemsController < ApplicationController
         @items = Item.where("name ILIKE ?", "%#{params[:search]}%")
         render :index
     end
+
+    def category
+        @items = Item.where("category ILIKE ?", "%#{params[:search]}%")
+        render :index
+    end
 end
