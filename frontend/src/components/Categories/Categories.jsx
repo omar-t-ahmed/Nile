@@ -9,7 +9,7 @@ const Categories = () => {
             {categories.map((category) => {
                 return (
                 <div className='category-clickable'>
-                    <p>{category}</p>
+                    <p className='category-name'>{category}</p>
                 </div>
                 )
             })}

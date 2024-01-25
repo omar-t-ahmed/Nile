@@ -1,4 +1,17 @@
 .all-categories {
     display: flex;
     background-color: #222f3e;
+    justify-content: space-around;
+}
+
+.category-clickable {
+    color: white;
+}
+
+.category-name {
+    padding: 1em;
+}
+
+.category-name:hover {
+    border: 1px solid white;
 }
