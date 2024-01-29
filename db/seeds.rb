@@ -236,6 +236,22 @@ require "open-uri"
   
   dune.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/dune.jpg"), filename: "dune.png")
 
+  catTreats = Item.create(
+  {
+    name: "Purina Friskies Party Mix Natural Yums Catnip Flavor",
+    price: 8.99,
+    category: "Pet Supplies",
+    body: "Treat your feline friend to the delicious Purina Friskies Party Mix Natural Yums Catnip Flavor. Made in USA facilities, these natural cat treats are a wholesome choice for your cat's snacking pleasure. The irresistible catnip flavor adds an extra element of enjoyment that will keep your cat coming back for more.",
+    description: "Indulge your cat with the goodness of Purina Friskies Party Mix Natural Yums. These cat treats are made in the USA using high-quality ingredients, ensuring a delightful and healthy snacking experience for your furry friend.",
+    item_specifications: "Net Weight: 20 oz. Canister;
+                    Made in USA Facilities;
+                    Natural Cat Treats;
+                    Catnip Flavor;
+                    Perfect for rewarding and pampering your cat"
+  })
+
+  catTreats.photo.attach(io: URI.open("https://nile21-seeds.s3.amazonaws.com/81Ye%2BZx0ztL._AC_SL1500_.jpg"), filename: "cat-treat.png")
+
   Review.create!(star_rating: 5, header: 'Excellent product', body: 'I love this item!', item: dellInspiron, user: demo_user)
   Review.create!(star_rating: 4, header: 'Solid Performance', body: 'Great laptop for the price!', item: dellInspiron, user: user1)
   Review.create!(star_rating: 3, header: 'Good but not great', body: 'The laptop is decent, but there are some minor issues.', item: dellInspiron, user: user2)
