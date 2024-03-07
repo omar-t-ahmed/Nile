@@ -148,7 +148,7 @@ return (
                 <p>Cart</p>
             </div>
         </nav>
-        {/* <Categories/> */}
+        <Categories/>
     </div>
     )
 }

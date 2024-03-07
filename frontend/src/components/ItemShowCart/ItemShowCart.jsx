@@ -77,11 +77,25 @@ const ItemShowCart = ({item}) => {
         }
     }
 
+    const RemainingTime = () => {
+        const now = new Date()
+        const targetTime = new Date(now)
+        targetTime.setHours(22, 0, 0, 0)
+    
+        let remainingTime = targetTime - now;
+    
+        const hours = Math.floor(remainingTime / (1000 * 60 * 60))
+        remainingTime %= 1000 * 60 * 60;
+        const minutes = Math.floor(remainingTime / (1000 * 60))
+    
+        return `${hours} hrs ${minutes} mins`
+    }
+
     return (
         <div className='item-show-cart-container'>
             <h3>${item?.price}</h3>
                 <p>FREE delivery <span className='bold-text'>{formattedDate}</span> on orders shipped by Nile over $35.</p>
-                <p>Or fastest delivery <span className='bold-text'>Tomorrow, {closestShipping}</span> Order within <span className='green-text'>6 hrs 16 mins</span></p>
+                <p>Or fastest delivery <span className='bold-text'>Tomorrow, {closestShipping}</span> Order within <span className='green-text'>{RemainingTime()}</span></p>
                 <span className='in-stock'>In Stock</span>
 
                 <div className='quantity'>
