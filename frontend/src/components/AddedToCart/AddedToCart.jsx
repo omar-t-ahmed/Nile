@@ -12,7 +12,7 @@ const AddedToCart = () => {
     const { itemId } = useParams();
     const item = useSelector(getItem(itemId));
     const history = useHistory()
-
+    
     useEffect(() => {
         dispatch(fetchItem(itemId));
     }, [dispatch, itemId]);
