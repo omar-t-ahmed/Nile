@@ -3,7 +3,7 @@ import { updateCategory } from '../../store/items'
 import { useDispatch } from 'react-redux'
 
 let categories = ['Electronics', 'Home and Kitchen', 'Toys and Games', 'Books']
-
+// categories
 const Categories = () => {
     const dispatch = useDispatch()
     
